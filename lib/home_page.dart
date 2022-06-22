@@ -3,8 +3,6 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -19,7 +17,7 @@ class _HomePageState extends State<HomePage> {
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
-          children: const <Widget>[
+          children: <Widget>[
             DrawerHeader(
               decoration: BoxDecoration(color: Colors.teal),
               child: Text(
@@ -31,13 +29,17 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.app_registration),
-              title: Text('Cadastro de produto'),
-            ),
-            
+                leading: Icon(Icons.app_registration),
+                title: Text('Cadastro de produto'),
+                onTap: () {
+                  Navigator.of(context).pushReplacementNamed('/register');
+                }),
             ListTile(
               leading: Icon(Icons.request_page),
               title: Text('Pedido'),
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed('/request');
+              },
             ),
           ],
         ),

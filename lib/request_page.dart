@@ -1,28 +1,28 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:primeiro_projeto/register_page.dart';
 
-import 'package:flutter/material.dart';
-import 'package:primeiro_projeto/app_controller.dart';
+import 'app_controller.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+class RequestPage extends StatefulWidget {
+  const RequestPage({Key? key}) : super(key: key);
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<RequestPage> createState() => _RequestPageState();
 }
 
-int counter = 0;
-
-class _RegisterPageState extends State<RegisterPage> {
+class _RequestPageState extends State<RequestPage> {
   final TextEditingController _controladorNome = TextEditingController();
   final TextEditingController _controladorQuantidade = TextEditingController();
   final TextEditingController _controladorValor = TextEditingController();
+  final TextEditingController _controladorValorTotal = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cadastrar Produto'),
+        title: Text('Pedido'),
         actions: [
           CustomSwitch(),
         ],
@@ -57,8 +57,17 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 16.0),
+              child: TextField(
+                controller: _controladorValorTotal,
+                decoration: InputDecoration(
+                    labelText: 'Valor a pagar', border: OutlineInputBorder()),
+                keyboardType: TextInputType.text,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 16.0),
               child: RaisedButton(
-                child: Text('Salvar'),
+                child: Text('Gerar NF'),
                 onPressed: () {
                   final String nome = _controladorNome.text;
                   final int? quantidade =
@@ -73,14 +82,6 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          setState(() {
-            counter++;
-          });
-        },
       ),
     );
   }
