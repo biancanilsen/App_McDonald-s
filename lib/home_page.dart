@@ -74,10 +74,11 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         Text(
-                          "R\$ --",
+                          "R\$ 12,90",
                           style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
                           ),
                         )
                       ],
@@ -103,10 +104,11 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         Text(
-                          "R\$ --",
+                          "R\$ 10,70",
                           style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
                           ),
                         )
                       ],
@@ -125,17 +127,18 @@ class _HomePageState extends State<HomePage> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Fritas',
+                          'Mcfritas pequena',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 12,
                           ),
                         ),
                         Text(
-                          "R\$ --",
+                          "R\$ 6,50",
                           style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
                           ),
                         )
                       ],
@@ -161,10 +164,11 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         Text(
-                          "R\$ --",
+                          "R\$ 10,00",
                           style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
                           ),
                         )
                       ],
@@ -176,7 +180,7 @@ class _HomePageState extends State<HomePage> {
                     width: 75,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                      image: AssetImage('assets/images/hamburguer.png'),
+                      image: AssetImage('assets/images/mc-nifico-bacon.png'),
                     )),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -190,10 +194,11 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         Text(
-                          "R\$ --",
+                          "R\$ 13,20",
                           style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
                           ),
                         )
                       ],
@@ -205,24 +210,25 @@ class _HomePageState extends State<HomePage> {
                     width: 75,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
+                      image: AssetImage('assets/images/molho-barbecue.png'),
                     )),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Quarteirão com queijo',
+                          'Molho-barbecue',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 12,
                           ),
                         ),
                         Text(
-                          "R\$ --",
+                          "R\$ 4,80",
                           style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
                           ),
                         )
                       ],
@@ -234,24 +240,25 @@ class _HomePageState extends State<HomePage> {
                     width: 75,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
+                      image: AssetImage('assets/images/mc-fritas-media.png'),
                     )),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Quarteirão com queijo',
+                          'Mcfritas média',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 12,
                           ),
                         ),
                         Text(
-                          "R\$ --",
+                          "R\$ 8,90",
                           style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
                           ),
                         )
                       ],
@@ -263,401 +270,25 @@ class _HomePageState extends State<HomePage> {
                     width: 75,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
+                      image: AssetImage('assets/images/mc-flurry-laka.png'),
                     )),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Quarteirão com queijo',
+                          'Top sundae caramelo',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 12,
                           ),
                         ),
                         Text(
-                          "R\$ --",
+                          "R\$ 11,50",
                           style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Quarteirão com queijo',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Text(
-                          "R\$ --",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Quarteirão com queijo',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Text(
-                          "R\$ --",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Quarteirão com queijo',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Text(
-                          "R\$ --",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Quarteirão com queijo',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Text(
-                          "R\$ --",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Quarteirão com queijo',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Text(
-                          "R\$ --",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Quarteirão com queijo',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Text(
-                          "R\$ --",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Quarteirão com queijo',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Text(
-                          "R\$ --",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Quarteirão com queijo',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Text(
-                          "R\$ --",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Quarteirão com queijo',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Text(
-                          "R\$ --",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Quarteirão com queijo',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Text(
-                          "R\$ --",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Quarteirão com queijo',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Text(
-                          "R\$ --",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Quarteirão com queijo',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Text(
-                          "R\$ --",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Quarteirão com queijo',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Text(
-                          "R\$ --",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
                           ),
                         )
                       ],

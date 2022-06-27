@@ -73,10 +73,12 @@ flutter:
 
     - assets/images/casquinha-baunilha.png
     - assets/images/coca-cola-300ml.png
-    - assets/images/duplo-cheddar-mcMelt.png
     - assets/images/mc-fritas-media.png
     - assets/images/mc-nifico-bacon.png
     - assets/images/molho-barbecue.png
+    - assets/images/top-sundae-caramelo.png
+    - assets/images/sundae-caramelo.png
+    - assets/images/mc-flurry-laka.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
