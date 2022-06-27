@@ -15,7 +15,6 @@ class RequestPage extends StatefulWidget {
 class _RequestPageState extends State<RequestPage> {
   final TextEditingController _controladorNome = TextEditingController();
   final TextEditingController _controladorQuantidade = TextEditingController();
-  final TextEditingController _controladorValor = TextEditingController();
   final TextEditingController _controladorValorTotal = TextEditingController();
 
   @override
@@ -49,15 +48,6 @@ class _RequestPageState extends State<RequestPage> {
             Padding(
               padding: const EdgeInsets.only(top: 16.0),
               child: TextField(
-                controller: _controladorValor,
-                decoration: InputDecoration(
-                    labelText: 'Valor Unitário', border: OutlineInputBorder()),
-                keyboardType: TextInputType.number,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16.0),
-              child: TextField(
                 controller: _controladorValorTotal,
                 decoration: InputDecoration(
                     labelText: 'Valor a pagar', border: OutlineInputBorder()),
@@ -67,12 +57,14 @@ class _RequestPageState extends State<RequestPage> {
             Padding(
               padding: const EdgeInsets.only(top: 16.0),
               child: RaisedButton(
+                color: Colors.green,
                 child: Text('Gerar NF'),
                 onPressed: () {
                   final String nome = _controladorNome.text;
                   final int? quantidade =
                       int.tryParse(_controladorQuantidade.text);
-                  final double? valor = double.tryParse(_controladorValor.text);
+                  final double? valor =
+                      double.tryParse(_controladorValorTotal.text);
 
                   final Produto produtoNovo =
                       Produto(nome, quantidade!, valor!);

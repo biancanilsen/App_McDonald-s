@@ -58,6 +58,7 @@ class _RegisterPageState extends State<RegisterPage> {
             Padding(
               padding: const EdgeInsets.only(top: 16.0),
               child: RaisedButton(
+                color: Colors.green,
                 child: Text('Salvar'),
                 onPressed: () {
                   final String nome = _controladorNome.text;

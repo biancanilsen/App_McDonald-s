@@ -17,46 +17,63 @@ class _LoginPageState extends State<LoginPage> {
   String senha = '';
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: SingleChildScrollView(
-      child: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextField(
-                onChanged: (text) {
-                  email = text;
-                },
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                    labelText: 'Email', border: OutlineInputBorder()),
-              ),
-              SizedBox(height: 10),
-              TextField(
+  Widget body(BuildContext context) {
+    return Container(
+      child: (SingleChildScrollView(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 200,
+                  width: 300,
+                  child: Image.asset('assets/images/logo.png'),
+                ),
+                SizedBox(height: 20),
+                TextField(
                   onChanged: (text) {
-                    senha = text;
+                    email = text;
                   },
-                  obscureText: true,
+                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
-                      labelText: 'Senha', border: OutlineInputBorder())),
-              SizedBox(height: 15),
-              RaisedButton(
-                onPressed: () {
-                  if (email == 'teste@teste' && senha == '123') ;
-                  Navigator.of(context).pushNamed('/home');
-                  print('Login realizado com sucesso');
-                },
-                child: Text('Entrar'),
-              )
-            ],
+                      labelText: 'Email', border: OutlineInputBorder()),
+                ),
+                SizedBox(height: 10),
+                TextField(
+                    onChanged: (text) {
+                      senha = text;
+                    },
+                    obscureText: true,
+                    decoration: InputDecoration(
+                        labelText: 'Senha', border: OutlineInputBorder())),
+                SizedBox(height: 15),
+                RaisedButton(
+                  color: Colors.white,
+                  onPressed: () {
+                    if (email == 'danilo@hotmail.com' && senha == '123') ;
+                    Navigator.of(context).pushNamed('/home');
+                    print('Login realizado com sucesso');
+                  },
+                  child: Text('Entrar'),
+                )
+              ],
+            ),
           ),
         ),
-      ),
-    ));
+      )),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Stack(children: [
+      Container(color: Colors.yellow[600]),
+      body(context),
+    ]));
   }
 }
