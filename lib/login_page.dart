@@ -52,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                         labelText: 'Senha', border: OutlineInputBorder())),
                 SizedBox(height: 15),
                 RaisedButton(
-                  color: Colors.white,
+                  color: (Colors.yellow[600]),
                   onPressed: () {
                     if (email == 'danilo@hotmail.com' && senha == '123') {
                       Navigator.of(context).pushNamed('/home');
@@ -73,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(children: [
-      Container(color: Colors.yellow[600]),
+      Container(color: Colors.white),
       body(context),
     ]));
   }
