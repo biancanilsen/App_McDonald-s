@@ -24,16 +24,10 @@ class _HomePageState extends State<HomePage> {
               accountEmail: Text('danilo@hotmail.com'),
             ),
             ListTile(
-                leading: Icon(Icons.app_registration),
-                title: Text('Cadastro de produto'),
-                onTap: () {
-                  Navigator.of(context).pushReplacementNamed('/register');
-                }),
-            ListTile(
-              leading: Icon(Icons.request_page),
-              title: Text('Pedido'),
+              leading: Icon(Icons.sell),
+              title: Text('Cupons'),
               onTap: () {
-                Navigator.of(context).pushReplacementNamed('/request');
+                Navigator.of(context).pushReplacementNamed('/coupon');
               },
             ),
           ],
