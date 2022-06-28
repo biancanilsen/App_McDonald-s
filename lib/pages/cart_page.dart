@@ -12,26 +12,22 @@ class CartPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<CartPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cadastrar Produto'),
+        title: Text('Carrinho de compras'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-          ],
+          children: <Widget>[],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {
-          
-        },
+        onPressed: () {},
       ),
     );
   }
