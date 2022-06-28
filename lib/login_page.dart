@@ -54,9 +54,10 @@ class _LoginPageState extends State<LoginPage> {
                 RaisedButton(
                   color: Colors.white,
                   onPressed: () {
-                    if (email == 'danilo@hotmail.com' && senha == '123') ;
-                    Navigator.of(context).pushNamed('/home');
-                    print('Login realizado com sucesso');
+                    if (email == 'danilo@hotmail.com' && senha == '123') {
+                      Navigator.of(context).pushNamed('/home');
+                      print('Login realizado com sucesso');
+                    }
                   },
                   child: Text('Entrar'),
                 )
