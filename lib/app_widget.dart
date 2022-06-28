@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:primeiro_projeto/controllers/app_controller.dart';
 import 'package:primeiro_projeto/pages/login_page.dart';
 import 'package:primeiro_projeto/pages/cart_page.dart';
-import 'package:primeiro_projeto/pages/request_page.dart';
+import 'package:primeiro_projeto/pages/coupon_page.dart';
 
 import 'pages/home_page.dart';
 
@@ -27,7 +27,7 @@ class AppWidget extends StatelessWidget {
               '/': (context) => LoginPage(),
               '/home': (context) => HomePage(),
               '/cart': (context) => CartPage(),
-              '/request': (context) => RequestPage(),
+              '/coupon': (context) => CouponPage(),
             });
       },
     );
