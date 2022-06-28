@@ -36,13 +36,13 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text("McDonald's"),
         actions: [
-           RaisedButton(
-                  color: (Colors.red),
-                  onPressed: () {
-                      Navigator.of(context).pushNamed('/cart');
-                  },
-                  child: Icon(Icons.shopping_cart, color: (Colors.white)),
-                )
+          RaisedButton(
+            color: (Colors.red),
+            onPressed: () {
+              Navigator.of(context).pushNamed('/cart');
+            },
+            child: Icon(Icons.shopping_cart, color: (Colors.white)),
+          )
         ],
       ),
       body: Container(
@@ -69,12 +69,11 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          'Quarteirão com queijo',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/cart");
+                          },
+                          child: Text("Quarteirão com queijo"),
                         ),
                         Text(
                           "R\$ 12,90",
@@ -99,12 +98,11 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          'Cheeseburguer',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/cart");
+                          },
+                          child: Text("Cheeseburguer"),
                         ),
                         Text(
                           "R\$ 10,70",
@@ -129,12 +127,11 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          'Mcfritas pequena',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/cart");
+                          },
+                          child: Text("Mcfritas pequena"),
                         ),
                         Text(
                           "R\$ 6,50",
@@ -159,12 +156,11 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          'Free refil 300ml',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/cart");
+                          },
+                          child: Text("Free refil 300ml"),
                         ),
                         Text(
                           "R\$ 10,00",
@@ -189,12 +185,11 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          'Hamburguer',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/cart");
+                          },
+                          child: Text("Hamburguer"),
                         ),
                         Text(
                           "R\$ 13,20",
@@ -219,12 +214,11 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          'Molho-barbecue',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/cart");
+                          },
+                          child: Text("Molho barbecue"),
                         ),
                         Text(
                           "R\$ 4,80",
@@ -249,12 +243,11 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          'Mcfritas média',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/cart");
+                          },
+                          child: Text("Mcfritas média"),
                         ),
                         Text(
                           "R\$ 8,90",
@@ -279,12 +272,11 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          'Top sundae caramelo',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/cart");
+                          },
+                          child: Text("Top sundae caramelo"),
                         ),
                         Text(
                           "R\$ 11,50",
