@@ -30,7 +30,7 @@ class _RegisterPageState extends State<CartPage> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          
+         Navigator.of(context).pushNamed('/home');
         },
       ),
     );
