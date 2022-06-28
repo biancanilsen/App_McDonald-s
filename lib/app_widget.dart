@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:primeiro_projeto/app_controller.dart';
-import 'package:primeiro_projeto/login_page.dart';
-import 'package:primeiro_projeto/register_page.dart';
-import 'package:primeiro_projeto/request_page.dart';
+import 'package:primeiro_projeto/controllers/app_controller.dart';
+import 'package:primeiro_projeto/pages/login_page.dart';
+import 'package:primeiro_projeto/pages/register_page.dart';
+import 'package:primeiro_projeto/pages/request_page.dart';
 
-import 'home_page.dart';
+import 'pages/home_page.dart';
 
 // ignore: use_key_in_widget_constructors
 class AppWidget extends StatelessWidget {

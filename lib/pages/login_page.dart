@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:primeiro_projeto/register_page.dart';
+import 'package:primeiro_projeto/pages/register_page.dart';
 
 import 'home_page.dart';
 

@@ -1,27 +1,28 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:primeiro_projeto/register_page.dart';
 
-import 'app_controller.dart';
+import 'package:flutter/material.dart';
+import 'package:primeiro_projeto/controllers/app_controller.dart';
 
-class RequestPage extends StatefulWidget {
-  const RequestPage({Key? key}) : super(key: key);
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
-  State<RequestPage> createState() => _RequestPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _RequestPageState extends State<RequestPage> {
+int counter = 0;
+
+class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _controladorNome = TextEditingController();
   final TextEditingController _controladorQuantidade = TextEditingController();
-  final TextEditingController _controladorValorTotal = TextEditingController();
+  final TextEditingController _controladorValor = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pedido'),
+        title: Text('Cadastrar Produto'),
         actions: [
           CustomSwitch(),
         ],
@@ -48,23 +49,22 @@ class _RequestPageState extends State<RequestPage> {
             Padding(
               padding: const EdgeInsets.only(top: 16.0),
               child: TextField(
-                controller: _controladorValorTotal,
+                controller: _controladorValor,
                 decoration: InputDecoration(
-                    labelText: 'Valor a pagar', border: OutlineInputBorder()),
-                keyboardType: TextInputType.text,
+                    labelText: 'Valor Unitário', border: OutlineInputBorder()),
+                keyboardType: TextInputType.number,
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 16.0),
               child: RaisedButton(
                 color: Colors.green,
-                child: Text('Gerar NF'),
+                child: Text('Salvar'),
                 onPressed: () {
                   final String nome = _controladorNome.text;
                   final int? quantidade =
                       int.tryParse(_controladorQuantidade.text);
-                  final double? valor =
-                      double.tryParse(_controladorValorTotal.text);
+                  final double? valor = double.tryParse(_controladorValor.text);
 
                   final Produto produtoNovo =
                       Produto(nome, quantidade!, valor!);
@@ -74,6 +74,14 @@ class _RequestPageState extends State<RequestPage> {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          setState(() {
+            counter++;
+          });
+        },
       ),
     );
   }
