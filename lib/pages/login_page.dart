@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:primeiro_projeto/register_page.dart';
+import 'package:primeiro_projeto/pages/register_page.dart';
 
 import 'home_page.dart';
 
@@ -54,9 +54,10 @@ class _LoginPageState extends State<LoginPage> {
                 RaisedButton(
                   color: (Colors.yellow[600]),
                   onPressed: () {
-                    if (email == 'danilo@hotmail.com' && senha == '123') ;
-                    Navigator.of(context).pushNamed('/home');
-                    print('Login realizado com sucesso');
+                    if (email == 'danilo@hotmail.com' && senha == '123') {
+                      Navigator.of(context).pushNamed('/home');
+                      print('Login realizado com sucesso');
+                    }
                   },
                   child: Text('Entrar'),
                 )
