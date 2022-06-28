@@ -80,6 +80,16 @@ flutter:
     - assets/images/top-sundae-caramelo.png
     - assets/images/sundae-caramelo.png
     - assets/images/mc-flurry-laka.png
+
+
+    - assets/images/coupon_1.png
+    - assets/images/coupon_2.png
+    - assets/images/coupon_3.png
+    - assets/images/coupon_4.png
+    - assets/images/coupon_5.png
+    - assets/images/coupon_6.png
+    - assets/images/coupon_7.png
+    - assets/images/coupon_8.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

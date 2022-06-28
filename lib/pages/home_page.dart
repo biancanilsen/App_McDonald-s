@@ -25,9 +25,9 @@ class _HomePageState extends State<HomePage> {
             ),
             ListTile(
               leading: Icon(Icons.sell),
-              title: Text('Cupons de desconto'),
+              title: Text('Cupons'),
               onTap: () {
-                Navigator.of(context).pushReplacementNamed('/request');
+                Navigator.of(context).pushReplacementNamed('/coupon');
               },
             ),
           ],
