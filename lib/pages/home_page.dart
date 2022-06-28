@@ -41,6 +41,15 @@ class _HomePageState extends State<HomePage> {
       ),
       appBar: AppBar(
         title: const Text("McDonald's"),
+        actions: [
+           RaisedButton(
+                  color: (Colors.red),
+                  onPressed: () {
+                      Navigator.of(context).pushNamed('/cart');
+                  },
+                  child: Icon(Icons.shopping_cart, color: (Colors.white)),
+                )
+        ],
       ),
       body: Container(
           child: CustomScrollView(

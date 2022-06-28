@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:primeiro_projeto/controllers/app_controller.dart';
 import 'package:primeiro_projeto/pages/login_page.dart';
-import 'package:primeiro_projeto/pages/register_page.dart';
+import 'package:primeiro_projeto/pages/cart_page.dart';
 import 'package:primeiro_projeto/pages/request_page.dart';
 
 import 'pages/home_page.dart';
@@ -26,7 +26,7 @@ class AppWidget extends StatelessWidget {
             routes: {
               '/': (context) => LoginPage(),
               '/home': (context) => HomePage(),
-              '/register': (context) => RegisterPage(),
+              '/cart': (context) => CartPage(),
               '/request': (context) => RequestPage(),
             });
       },
