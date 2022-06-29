@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
               leading: Icon(Icons.sell),
               title: Text('Cupons'),
               onTap: () {
-                Navigator.of(context).pushReplacementNamed('/coupon');
+                Navigator.of(context).pushNamed('/coupon');
               },
             ),
           ],
