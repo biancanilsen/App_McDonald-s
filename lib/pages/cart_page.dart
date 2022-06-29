@@ -21,13 +21,74 @@ class _RegisterPageState extends State<CartPage> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                    height: 150,
+                    width: 360,
+                    color: Colors.red,
+                    child: Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                      alignment: Alignment.centerLeft,
+                      image: AssetImage('assets/images/quarteirão.png'),
+                    )))),
+                SizedBox(height: 10),
+                Container(
+                    height: 150,
+                    width: 360,
+                    color: Colors.red,
+                    child: Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                      alignment: Alignment.centerLeft,
+                      image: AssetImage('assets/images/quarteirão.png'),
+                    )))),
+                SizedBox(height: 10),
+                Container(
+                    height: 150,
+                    width: 360,
+                    color: Colors.red,
+                    child: Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                      alignment: Alignment.centerLeft,
+                      image: AssetImage('assets/images/quarteirão.png'),
+                    )))),
+                SizedBox(height: 10),
+                Container(
+                    height: 150,
+                    width: 360,
+                    color: Colors.red,
+                    child: Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                      alignment: Alignment.centerLeft,
+                      image: AssetImage('assets/images/quarteirão.png'),
+                    )))),
+                     SizedBox(height: 10),
+                Container(
+                    height: 150,
+                    width: 360,
+                    color: Colors.red,
+                    child: Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                      alignment: Alignment.centerLeft,
+                      image: AssetImage('assets/images/quarteirão.png'),
+                    )))),
+              ],
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed('/home');
+        },
       ),
     );
   }
