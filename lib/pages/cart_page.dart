@@ -68,7 +68,7 @@ class _RegisterPageState extends State<CartPage> {
                       alignment: Alignment.centerLeft,
                       image: AssetImage('assets/images/quarteirão.png'),
                     )))),
-                     SizedBox(height: 10),
+                SizedBox(height: 10),
                 Container(
                     height: 150,
                     width: 360,

@@ -49,7 +49,7 @@ class _CouponPageState extends State<CouponPage> {
                         RaisedButton(
                           color: (Colors.green[600]),
                           onPressed: () {
-                            Navigator.of(context).pushNamed('/home');
+                            Navigator.of(context).pushNamed('/cart');
                             print('Login realizado com sucesso');
                           },
                           child: Text('Comprar'),
@@ -71,7 +71,7 @@ class _CouponPageState extends State<CouponPage> {
                         RaisedButton(
                           color: (Colors.green[600]),
                           onPressed: () {
-                            Navigator.of(context).pushNamed('/home');
+                            Navigator.of(context).pushNamed('/cart');
                             print('Login realizado com sucesso');
                           },
                           child: Text('Comprar'),
@@ -93,7 +93,7 @@ class _CouponPageState extends State<CouponPage> {
                         RaisedButton(
                           color: (Colors.green[600]),
                           onPressed: () {
-                            Navigator.of(context).pushNamed('/home');
+                            Navigator.of(context).pushNamed('/cart');
                             print('Login realizado com sucesso');
                           },
                           child: Text('Comprar'),
@@ -115,7 +115,7 @@ class _CouponPageState extends State<CouponPage> {
                         RaisedButton(
                           color: (Colors.green[600]),
                           onPressed: () {
-                            Navigator.of(context).pushNamed('/home');
+                            Navigator.of(context).pushNamed('/cart');
                             print('Login realizado com sucesso');
                           },
                           child: Text('Comprar'),
@@ -137,7 +137,7 @@ class _CouponPageState extends State<CouponPage> {
                         RaisedButton(
                           color: (Colors.green[600]),
                           onPressed: () {
-                            Navigator.of(context).pushNamed('/home');
+                            Navigator.of(context).pushNamed('/cart');
                             print('Login realizado com sucesso');
                           },
                           child: Text('Comprar'),
@@ -159,7 +159,7 @@ class _CouponPageState extends State<CouponPage> {
                         RaisedButton(
                           color: (Colors.green[600]),
                           onPressed: () {
-                            Navigator.of(context).pushNamed('/home');
+                            Navigator.of(context).pushNamed('/cart');
                             print('Login realizado com sucesso');
                           },
                           child: Text('Comprar'),
@@ -181,7 +181,7 @@ class _CouponPageState extends State<CouponPage> {
                         RaisedButton(
                           color: (Colors.green[600]),
                           onPressed: () {
-                            Navigator.of(context).pushNamed('/home');
+                            Navigator.of(context).pushNamed('/cart');
                             print('Login realizado com sucesso');
                           },
                           child: Text('Comprar'),
@@ -203,7 +203,7 @@ class _CouponPageState extends State<CouponPage> {
                         RaisedButton(
                           color: (Colors.green[600]),
                           onPressed: () {
-                            Navigator.of(context).pushNamed('/home');
+                            Navigator.of(context).pushNamed('/cart');
                             print('Login realizado com sucesso');
                           },
                           child: Text('Comprar'),
