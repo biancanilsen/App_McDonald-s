@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:primeiro_projeto/pages/register_page.dart';
+
 
 import '../controllers/app_controller.dart';
 
@@ -21,6 +21,7 @@ class _CouponPageState extends State<CouponPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text("Cupons desconto"),
       ),
       body: Container(
