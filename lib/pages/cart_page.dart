@@ -20,68 +20,42 @@ class _RegisterPageState extends State<CartPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                    height: 150,
-                    width: 360,
-                    color: Colors.red,
-                    child: Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                      alignment: Alignment.centerLeft,
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )))),
-                SizedBox(height: 10),
-                Container(
-                    height: 150,
-                    width: 360,
-                    color: Colors.red,
-                    child: Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                      alignment: Alignment.centerLeft,
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )))),
-                SizedBox(height: 10),
-                Container(
-                    height: 150,
-                    width: 360,
-                    color: Colors.red,
-                    child: Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                      alignment: Alignment.centerLeft,
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )))),
-                SizedBox(height: 10),
-                Container(
-                    height: 150,
-                    width: 360,
-                    color: Colors.red,
-                    child: Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                      alignment: Alignment.centerLeft,
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )))),
-                     SizedBox(height: 10),
-                Container(
-                    height: 150,
-                    width: 360,
-                    color: Colors.red,
-                    child: Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                      alignment: Alignment.centerLeft,
-                      image: AssetImage('assets/images/quarteirão.png'),
-                    )))),
-              ],
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                      height: 150,
+                      width: 360,
+                      color: Colors.red,
+                      child: Row(
+                        children: [
+                          Container(
+                              height: 100,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                alignment: Alignment.bottomRight,
+                                image:
+                                    AssetImage('assets/images/quarteirão.png'),
+                              ))),
+                          RaisedButton(
+                            color: (Colors.green),
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('/cart');
+                            },
+                            child: Icon(Icons.shopping_cart,
+                                color: (Colors.white)),
+                          )
+                        ],
+                      )),
+                  SizedBox(height: 10),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
