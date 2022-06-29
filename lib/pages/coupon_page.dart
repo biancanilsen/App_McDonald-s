@@ -21,7 +21,7 @@ class _CouponPageState extends State<CouponPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        // automaticallyImplyLeading: false,
         title: const Text("Cupons desconto"),
       ),
       body: Container(
