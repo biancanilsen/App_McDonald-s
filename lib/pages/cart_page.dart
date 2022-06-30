@@ -96,7 +96,20 @@ class _RegisterPageState extends State<CartPage> {
                           side: BorderSide(color: Colors.green)),
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       color: (Colors.green[600]),
-                      onPressed: () {},
+                      onPressed: () => showDialog<String>(
+                            context: context,
+                            builder: (BuildContext context) => AlertDialog(
+                              title: const Text('Pedido realizado com sucesso'),
+                              content: const Text('Receba em seu endereço'),
+                              actions: <Widget>[
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(context, 'Cancel'),
+                                  child: const Text('Ok'),
+                                ),
+                              ],
+                            ),
+                          ),
                       child: Container(
                         width: double.infinity,
                         height: 50,

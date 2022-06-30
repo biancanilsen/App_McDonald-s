@@ -31,9 +31,6 @@ class _HomePageState extends State<HomePage> {
                   fontSize: 11,
                 ),
               ),
-              onTap: () {
-                Navigator.of(context).pushNamed('/');
-              },
             ),
             ListTile(
               leading: Icon(Icons.sell),
