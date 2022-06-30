@@ -24,10 +24,30 @@ class _HomePageState extends State<HomePage> {
               accountEmail: Text('danilo@hotmail.com'),
             ),
             ListTile(
+              title: Text(
+                'R. XV de Novembro, 1480 - Centro, Blumenau - SC',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 11,
+                ),
+              ),
+              onTap: () {
+                Navigator.of(context).pushNamed('/');
+              },
+            ),
+            ListTile(
               leading: Icon(Icons.sell),
               title: Text('Cupons'),
               onTap: () {
                 Navigator.of(context).pushNamed('/coupon');
+              },
+            ),
+            SizedBox(height: 320),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Logout'),
+              onTap: () {
+                Navigator.of(context).pushNamed('/');
               },
             ),
           ],

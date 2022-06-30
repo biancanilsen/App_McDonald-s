@@ -52,15 +52,24 @@ class _LoginPageState extends State<LoginPage> {
                         labelText: 'Senha', border: OutlineInputBorder())),
                 SizedBox(height: 15),
                 RaisedButton(
-                  color: (Colors.yellow[600]),
-                  onPressed: () {
-                    if (email == 'danilo@hotmail.com' && senha == '123') {
-                      Navigator.of(context).pushNamed('/home');
-                      print('Login realizado com sucesso');
-                    }
-                  },
-                  child: Text('Entrar'),
-                )
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                        side: BorderSide(color: Colors.yellow)),
+                    // crossAxisAlignment: CrossAxisAlignment.stretch,
+                    color: (Colors.yellow[600]),
+                    onPressed: () {
+                      if (email == 'danilo@hotmail.com' && senha == '123') {
+                        Navigator.of(context).pushNamed('/home');
+                        print('Login realizado com sucesso');
+                      }
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      child: Center(
+                          child: Text(
+                        'Entrar',
+                      )),
+                    )),
               ],
             ),
           ),
