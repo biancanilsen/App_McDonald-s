@@ -47,6 +47,9 @@ class _CouponPageState extends State<CouponPage> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         RaisedButton(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                              side: BorderSide(color: Colors.green)),
                           color: (Colors.green[600]),
                           onPressed: () {
                             Navigator.of(context).pushNamed('/cart');
@@ -69,6 +72,9 @@ class _CouponPageState extends State<CouponPage> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         RaisedButton(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                              side: BorderSide(color: Colors.green)),
                           color: (Colors.green[600]),
                           onPressed: () {
                             Navigator.of(context).pushNamed('/cart');
@@ -91,6 +97,9 @@ class _CouponPageState extends State<CouponPage> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         RaisedButton(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                              side: BorderSide(color: Colors.green)),
                           color: (Colors.green[600]),
                           onPressed: () {
                             Navigator.of(context).pushNamed('/cart');
@@ -113,6 +122,9 @@ class _CouponPageState extends State<CouponPage> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         RaisedButton(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                              side: BorderSide(color: Colors.green)),
                           color: (Colors.green[600]),
                           onPressed: () {
                             Navigator.of(context).pushNamed('/cart');
@@ -135,6 +147,9 @@ class _CouponPageState extends State<CouponPage> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         RaisedButton(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                              side: BorderSide(color: Colors.green)),
                           color: (Colors.green[600]),
                           onPressed: () {
                             Navigator.of(context).pushNamed('/cart');
@@ -157,6 +172,9 @@ class _CouponPageState extends State<CouponPage> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         RaisedButton(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                              side: BorderSide(color: Colors.green)),
                           color: (Colors.green[600]),
                           onPressed: () {
                             Navigator.of(context).pushNamed('/cart');
@@ -179,6 +197,9 @@ class _CouponPageState extends State<CouponPage> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         RaisedButton(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                              side: BorderSide(color: Colors.green)),
                           color: (Colors.green[600]),
                           onPressed: () {
                             Navigator.of(context).pushNamed('/cart');
@@ -201,6 +222,9 @@ class _CouponPageState extends State<CouponPage> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         RaisedButton(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                              side: BorderSide(color: Colors.green)),
                           color: (Colors.green[600]),
                           onPressed: () {
                             Navigator.of(context).pushNamed('/cart');

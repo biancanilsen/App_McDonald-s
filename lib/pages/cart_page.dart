@@ -71,33 +71,43 @@ class _RegisterPageState extends State<CartPage> {
                       )),
                   SizedBox(height: 10),
                   RaisedButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                          side: BorderSide(color: Colors.yellow)),
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       color: (Colors.yellow[600]),
                       onPressed: () {},
                       child: Container(
                         width: double.infinity,
-                        child: Text(
+                        height: 50,
+                        child: Center(
+                            child: Text(
                           'Total: R\$ $valor',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                           ),
-                        ),
+                        )),
                       )),
                   SizedBox(height: 300),
                   RaisedButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                          side: BorderSide(color: Colors.green)),
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       color: (Colors.green[600]),
                       onPressed: () {},
                       child: Container(
                         width: double.infinity,
-                        child: Text(
+                        height: 50,
+                        child: Center(
+                            child: Text(
                           'Finalizar pedido e pagar pelo app',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                           ),
-                        ),
+                        )),
                       )),
                 ],
               ),
