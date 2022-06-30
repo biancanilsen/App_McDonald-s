@@ -99,8 +99,9 @@ class _RegisterPageState extends State<CartPage> {
                       onPressed: () => showDialog<String>(
                             context: context,
                             builder: (BuildContext context) => AlertDialog(
-                              title: const Text('Pedido realizado com sucesso'),
-                              content: const Text('Receba em seu endereço'),
+                              title:
+                                  const Text('Pedido realizado com sucesso!'),
+                              content: const Text('Receba em seu endereço.'),
                               actions: <Widget>[
                                 TextButton(
                                   onPressed: () =>
