@@ -12,6 +12,9 @@ class CartPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<CartPage> {
+  int counter = 0;
+  int valor = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +32,7 @@ class _RegisterPageState extends State<CartPage> {
                   Container(
                       height: 150,
                       width: 360,
-                      color: Colors.red,
+                      // color: Colors.red,
                       child: Row(
                         children: [
                           Container(
@@ -37,33 +40,77 @@ class _RegisterPageState extends State<CartPage> {
                               width: 150,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
-                                alignment: Alignment.bottomRight,
+                                alignment: Alignment.bottomCenter,
                                 image:
                                     AssetImage('assets/images/quarteirão.png'),
                               ))),
-                          RaisedButton(
-                            color: (Colors.green),
+                          // Container(
+                          OutlinedButton(
                             onPressed: () {
-                              Navigator.of(context).pushNamed('/cart');
+                              setState(() {
+                                counter--;
+                              });
                             },
-                            child: Icon(Icons.shopping_cart,
-                                color: (Colors.white)),
-                          )
+                            child: const Text('-'),
+                          ),
+                          OutlinedButton(
+                            onPressed: () {
+                              debugPrint('Received click');
+                            },
+                            child: Text('$counter'),
+                          ),
+                          OutlinedButton(
+                            onPressed: () {
+                              setState(() {
+                                counter++;
+                              });
+                            },
+                            child: const Text('+'),
+                          ),
                         ],
                       )),
                   SizedBox(height: 10),
+                  RaisedButton(
+                      // crossAxisAlignment: CrossAxisAlignment.stretch,
+                      color: (Colors.yellow[600]),
+                      onPressed: () {},
+                      child: Container(
+                        width: double.infinity,
+                        child: Text(
+                          'Total: R\$ $valor',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                      )),
+                  SizedBox(height: 300),
+                  RaisedButton(
+                      // crossAxisAlignment: CrossAxisAlignment.stretch,
+                      color: (Colors.green[600]),
+                      onPressed: () {},
+                      child: Container(
+                        width: double.infinity,
+                        child: Text(
+                          'Finalizar pedido e pagar pelo app',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                      )),
                 ],
               ),
             ],
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          Navigator.of(context).pushNamed('/home');
-        },
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   child: Icon(Icons.add),
+      //   onPressed: () {
+      //     Navigator.of(context).pushNamed('/home');
+      //   },
+      // ),
     );
   }
 }
