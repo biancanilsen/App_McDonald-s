@@ -5,7 +5,7 @@ import 'package:primeiro_projeto/pages/login_page.dart';
 import 'package:primeiro_projeto/pages/cart_page.dart';
 import 'package:primeiro_projeto/pages/coupon_page.dart';
 
-import 'pages/home_page.dart';
+import '../pages/home_page.dart';
 
 // ignore: use_key_in_widget_constructors
 class AppWidget extends StatelessWidget {

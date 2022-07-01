@@ -5,8 +5,9 @@ class SQLHelper {
   static Future<void> createTables(sql.Database database) async {
     await database.execute("""CREATE TABLE items(
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-        title TEXT,
-        description TEXT,
+        name TEXT,
+        price REAL,
+        add INTEGER,
         createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
       )
       """);
@@ -14,7 +15,7 @@ class SQLHelper {
 
   static Future<sql.Database> db() async {
     return sql.openDatabase(
-      'kindacode.db',
+      'mac.db',
       version: 1,
       onCreate: (sql.Database database, int version) async {
         await createTables(database);
@@ -22,10 +23,10 @@ class SQLHelper {
     );
   }
 
-  static Future<int> createItem(String title, String? descrption) async {
+  static Future<int> createItem(String name, double price, int add) async {
     final db = await SQLHelper.db();
 
-    final data = {'title': title, 'description': descrption};
+    final data = {'name': name, 'price': price, 'add': add};
     final id = await db.insert('items', data,
         conflictAlgorithm: sql.ConflictAlgorithm.replace);
     return id;
@@ -42,12 +43,13 @@ class SQLHelper {
   }
 
   static Future<int> updateItem(
-      int id, String title, String? descrption) async {
+      int id, String name, double price, int add) async {
     final db = await SQLHelper.db();
 
     final data = {
-      'title': title,
-      'description': descrption,
+      'name': name,
+      'price': price,
+      'add': add,
       'createdAt': DateTime.now().toString()
     };
 

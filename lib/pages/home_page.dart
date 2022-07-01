@@ -41,6 +41,7 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 320),
             ListTile(
+              // contentPadding: ,
               leading: Icon(Icons.logout),
               title: Text('Logout'),
               onTap: () {
