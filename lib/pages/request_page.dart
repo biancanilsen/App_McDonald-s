@@ -68,7 +68,7 @@ class _RequestPageState extends State<RequestPage> {
 
                   final Produto produtoNovo =
                       Produto(nome, quantidade!, valor!);
-                  print(produtoNovo);
+                  debugPrint('produtoNovo');
                 },
               ),
             ),
@@ -97,6 +97,7 @@ class Produto {
 }
 
 class CustomSwitch extends StatelessWidget {
+  CustomSwitch({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Switch(

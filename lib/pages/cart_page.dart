@@ -89,7 +89,7 @@ class _RegisterPageState extends State<CartPage> {
                           ),
                         )),
                       )),
-                  SizedBox(height: 300),
+                  SizedBox(height: 400),
                   RaisedButton(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12.0),

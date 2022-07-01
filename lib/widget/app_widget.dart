@@ -24,10 +24,10 @@ class AppWidget extends StatelessWidget {
                   : Brightness.light,
             ),
             routes: {
-              '/': (context) => LoginPage(),
+              '/': (context) => const LoginPage(),
               '/home': (context) => HomePage(),
-              '/cart': (context) => CartPage(),
-              '/coupon': (context) => CouponPage(),
+              '/cart': (context) => const CartPage(),
+              '/coupon': (context) => const CouponPage(),
             });
       },
     );

@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                 Navigator.of(context).pushNamed('/coupon');
               },
             ),
-            SizedBox(height: 320),
+            SizedBox(height: 400),
             ListTile(
               // contentPadding: ,
               leading: Icon(Icons.logout),
