@@ -4,6 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:primeiro_projeto/controllers/app_controller.dart';
 
+import '../database/sql_helper.dart';
+
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
 
@@ -76,7 +78,9 @@ class _RegisterPageState extends State<CartPage> {
                           side: BorderSide(color: Colors.yellow)),
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       color: (Colors.yellow[600]),
-                      onPressed: () {},
+                      onPressed: () async {
+                         await _addItem();
+                      },
                       child: Container(
                         width: double.infinity,
                         height: 50,
@@ -138,6 +142,12 @@ class _RegisterPageState extends State<CartPage> {
     );
   }
 }
+
+  Future<void> _addItem() async {
+    await SQLHelper.createItem(
+      'Quarteirão com queijo', 'R\$ 12,90', 'assets/images/quarteirão.png', 0);
+  }
+
 
 class Produto {
   final String nome;
