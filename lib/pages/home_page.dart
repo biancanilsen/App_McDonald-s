@@ -18,9 +18,10 @@ class _HomePageState extends State<HomePage> {
               currentAccountPicture: ClipRRect(
                 borderRadius: BorderRadius.circular(40),
                 child: Image.network(
-                    'https://media-exp1.licdn.com/dms/image/C4D03AQHIdGNgNhA0Aw/profile-displayphoto-shrink_200_200/0/1586011039730?e=2147483647&v=beta&t=fgspTeg6E9sfvn8QGNnnwX5fNpmzHwvtDxON8Yz9-TA'),
+                    // 'https://media-exp1.licdn.com/dms/image/C4D03AQHIdGNgNhA0Aw/profile-displayphoto-shrink_200_200/0/1586011039730?e=2147483647&v=beta&t=fgspTeg6E9sfvn8QGNnnwX5fNpmzHwvtDxON8Yz9-TA'),
+                    'https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg'),
               ),
-              accountName: Text('Danilo'),
+              accountName: Text('João'),
               accountEmail: Text('danilo@hotmail.com'),
             ),
             ListTile(
