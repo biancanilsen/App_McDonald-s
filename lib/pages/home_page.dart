@@ -2,12 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../database/sql_helper.dart';
+
 class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Map<String, dynamic>> _items = [];
+
+  bool _isLoading = true;
+  // This function is used to fetch all data from the database
+  void _refreshItems() async {
+    final data = await SQLHelper.getItems();
+    setState(() {
+      _items = data;
+      _isLoading = false;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _refreshItems(); // Loading the diary when the app starts
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,254 +83,40 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: Container(
-          child: CustomScrollView(
-        primary: false,
-        slivers: <Widget>[
-          SliverPadding(
-            padding: const EdgeInsets.all(20),
-            sliver: SliverGrid.count(
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              crossAxisCount: 2,
-              children: <Widget>[
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/quarteirão.png'),
+      body: _isLoading
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : ListView.builder(
+              itemCount: _items.length,
+              itemBuilder: (context, index) => Card(
+                color: Colors.orange[200],
+                margin: const EdgeInsets.all(15),
+                child: ListTile(
+                    title: Text(_items[index]['name']),
+                    // subtitle: Text(_items[index]['price']),
+                    trailing: SizedBox(
+                      width: 100,
+                      child: Row(
+                        children: [
+                          // IconButton(
+                          //   icon: const Icon(Icons.edit),
+                          //   onPressed: () => _showForm(_journals[index]['id']),
+                          // ),
+                          // IconButton(
+                          //   icon: const Icon(Icons.delete),
+                          //   onPressed: () =>
+                          //       _deleteItem(_journals[index]['id']),
+                          // ),
+                        ],
+                      ),
                     )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, "/cart");
-                          },
-                          child: Text("Quarteirão com queijo"),
-                        ),
-                        Text(
-                          "R\$ 12,90",
-                          style: TextStyle(
-                            color: Colors.green,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/cheeseburguer.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, "/cart");
-                          },
-                          child: Text("Cheeseburguer"),
-                        ),
-                        Text(
-                          "R\$ 10,70",
-                          style: TextStyle(
-                            color: Colors.green,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/fritas.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, "/cart");
-                          },
-                          child: Text("Mcfritas pequena"),
-                        ),
-                        Text(
-                          "R\$ 6,50",
-                          style: TextStyle(
-                            color: Colors.green,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/coca-cola-300ml.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, "/cart");
-                          },
-                          child: Text("Free refil 300ml"),
-                        ),
-                        Text(
-                          "R\$ 10,00",
-                          style: TextStyle(
-                            color: Colors.green,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/mc-nifico-bacon.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, "/cart");
-                          },
-                          child: Text("Hamburguer"),
-                        ),
-                        Text(
-                          "R\$ 13,20",
-                          style: TextStyle(
-                            color: Colors.green,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/molho-barbecue.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, "/cart");
-                          },
-                          child: Text("Molho barbecue"),
-                        ),
-                        Text(
-                          "R\$ 4,80",
-                          style: TextStyle(
-                            color: Colors.green,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/mc-fritas-media.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, "/cart");
-                          },
-                          child: Text("Mcfritas média"),
-                        ),
-                        Text(
-                          "R\$ 8,90",
-                          style: TextStyle(
-                            color: Colors.green,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: const EdgeInsets.all(8),
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/mc-flurry-laka.png'),
-                    )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, "/cart");
-                          },
-                          child: Text("Top sundae caramelo"),
-                        ),
-                        Text(
-                          "R\$ 11,50",
-                          style: TextStyle(
-                            color: Colors.green,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        )
-                      ],
-                    )),
-              ],
+              ),
             ),
-          ),
-        ],
-      )),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () => _refreshItems(),
+      ),
     );
   }
 }
