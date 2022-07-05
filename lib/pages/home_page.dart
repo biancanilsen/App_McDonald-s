@@ -90,28 +90,46 @@ class _HomePageState extends State<HomePage> {
             )
           : ListView.builder(
               itemCount: _items.length,
-              itemBuilder: (context, index) => Card(
-                color: Colors.orange[200],
-                margin: const EdgeInsets.all(15),
-                child: ListTile(
-                    title: Text(_items[index]['name']),
-                    // subtitle: Text(_items[index]['price']),
-                    trailing: SizedBox(
-                      width: 100,
-                      child: Row(
-                        children: [
-                          // IconButton(
-                          //   icon: const Icon(Icons.edit),
-                          //   onPressed: () => _showForm(_journals[index]['id']),
-                          // ),
-                          // IconButton(
-                          //   icon: const Icon(Icons.delete),
-                          //   onPressed: () =>
-                          //       _deleteItem(_journals[index]['id']),
-                          // ),
-                        ],
+              itemBuilder: (context, index) => Container(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                  alignment: Alignment.bottomLeft,
+                  image: AssetImage(_items[index]['image']),
+                )),
+                margin: const EdgeInsets.all(17),
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 80.0,
+                  ),
+                  child: ListTile(
+                      title: Text(
+                        _items[index]['name'],
                       ),
-                    )),
+                      subtitle: Text(
+                        _items[index]['price'],
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
+                      ),
+                      trailing: SizedBox(
+                        width: 100,
+                        child: Row(
+                          children: [
+                            // IconButton(
+                            //   icon: const Icon(Icons.edit),
+                            //   onPressed: () => _showForm(_journals[index]['id']),
+                            // ),
+                            // IconButton(
+                            //   icon: const Icon(Icons.delete),
+                            //   onPressed: () =>
+                            //       _deleteItem(_journals[index]['id']),
+                            // ),
+                          ],
+                        ),
+                      )),
+                ),
               ),
             ),
       floatingActionButton: FloatingActionButton(

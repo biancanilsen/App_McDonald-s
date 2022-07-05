@@ -79,7 +79,7 @@ class _RegisterPageState extends State<CartPage> {
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       color: (Colors.yellow[600]),
                       onPressed: () async {
-                         await _addItem();
+                        await _addItem();
                       },
                       child: Container(
                         width: double.infinity,
@@ -143,11 +143,10 @@ class _RegisterPageState extends State<CartPage> {
   }
 }
 
-  Future<void> _addItem() async {
-    await SQLHelper.createItem(
+Future<void> _addItem() async {
+  await SQLHelper.createItem(
       'Quarteirão com queijo', 'R\$ 12,90', 'assets/images/quarteirão.png', 0);
-  }
-
+}
 
 class Produto {
   final String nome;
