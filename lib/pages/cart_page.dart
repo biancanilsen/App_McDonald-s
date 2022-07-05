@@ -145,7 +145,7 @@ class _RegisterPageState extends State<CartPage> {
 
 Future<void> _addItem() async {
   await SQLHelper.createItem(
-      'Quarteirão com queijo', 'R\$ 12,90', 'assets/images/quarteirão.png', 0);
+      'Mac Nífico Bacon', 'R\$ 13,90', 'assets/images/mc-nifico-bacon.png', 0);
 }
 
 class Produto {

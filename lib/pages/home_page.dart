@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                     // 'https://media-exp1.licdn.com/dms/image/C4D03AQHIdGNgNhA0Aw/profile-displayphoto-shrink_200_200/0/1586011039730?e=2147483647&v=beta&t=fgspTeg6E9sfvn8QGNnnwX5fNpmzHwvtDxON8Yz9-TA'),
                     'https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg'),
               ),
-              accountName: Text('João'),
+              accountName: Text('Danilo'),
               accountEmail: Text('danilo@hotmail.com'),
             ),
             ListTile(
@@ -99,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                 margin: const EdgeInsets.all(17),
                 child: Padding(
                   padding: const EdgeInsets.only(
-                    left: 80.0,
+                    left: 85.0,
                   ),
                   child: ListTile(
                       title: Text(
