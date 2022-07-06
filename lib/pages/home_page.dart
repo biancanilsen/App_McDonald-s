@@ -117,15 +117,18 @@ class _HomePageState extends State<HomePage> {
                         width: 100,
                         child: Row(
                           children: [
-                            // IconButton(
-                            //   icon: const Icon(Icons.edit),
-                            //   onPressed: () => _showForm(_journals[index]['id']),
-                            // ),
-                            // IconButton(
-                            //   icon: const Icon(Icons.delete),
-                            //   onPressed: () =>
-                            //       _deleteItem(_journals[index]['id']),
-                            // ),
+                            RaisedButton(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  side: BorderSide(color: Colors.green)),
+                              color: (Colors.green[600]),
+                              onPressed: () {
+                                Navigator.of(context).pushNamed('/cart');
+                                print('Produto adicionado com sucesso');
+                              },
+                              child: Text(
+                                  'Comprar'), // onPressed: () => _showForm(_journals[index]['id']),
+                            ),
                           ],
                         ),
                       )),
