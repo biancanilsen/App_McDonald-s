@@ -76,6 +76,27 @@ class _HomePageState extends State<HomePage> {
         title: const Text("McDonald's"),
         actions: [
           RaisedButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12.0),
+                  side: BorderSide(color: Colors.yellow)),
+              // crossAxisAlignment: CrossAxisAlignment.stretch,
+              color: (Colors.yellow[600]),
+              onPressed: () async {
+                await _addItem();
+              },
+              child: Container(
+                width: 10,
+                height: 10,
+                child: Center(
+                    child: Text(
+                  'Total: R\$',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 2,
+                  ),
+                )),
+              )),
+          RaisedButton(
             color: (Colors.red),
             onPressed: () {
               Navigator.of(context).pushNamed('/cart');
@@ -132,8 +153,7 @@ class _HomePageState extends State<HomePage> {
                                     _items[index]['image'],
                                     buy);
                                 Navigator.of(context).pushNamed('/cart');
-                                print(
-                                    'Produto adicionado ao carrinho com sucesso');
+                                print(buy);
                               },
                               child: Text(
                                   'Comprar'), // onPressed: () => _showForm(_journals[index]['id']),
@@ -156,5 +176,10 @@ class _HomePageState extends State<HomePage> {
     await SQLHelper.updateItem(id, image, price, image, buy);
 
     _refreshItems();
+  }
+
+  Future<void> _addItem() async {
+    await SQLHelper.createItem(
+        'Mc Fritas Média', 'R\$ 5,90', 'assets/images/mc-fritas-media.png', 0);
   }
 }
