@@ -123,8 +123,17 @@ class _HomePageState extends State<HomePage> {
                                   side: BorderSide(color: Colors.green)),
                               color: (Colors.green[600]),
                               onPressed: () {
+                                var buy = 1;
+                                onPressed:
+                                () => _updateItem(
+                                    _items[index]['id'],
+                                    _items[index]['name'],
+                                    _items[index]['price'],
+                                    _items[index]['image'],
+                                    buy);
                                 Navigator.of(context).pushNamed('/cart');
-                                print('Produto adicionado com sucesso');
+                                print(
+                                    'Produto adicionado ao carrinho com sucesso');
                               },
                               child: Text(
                                   'Comprar'), // onPressed: () => _showForm(_journals[index]['id']),
@@ -140,5 +149,12 @@ class _HomePageState extends State<HomePage> {
         onPressed: () => _refreshItems(),
       ),
     );
+  }
+
+  Future<void> _updateItem(
+      int id, String name, String price, String image, int buy) async {
+    await SQLHelper.updateItem(id, image, price, image, buy);
+
+    _refreshItems();
   }
 }

@@ -44,8 +44,13 @@ class SQLHelper {
     return db.query('items', where: "id = ?", whereArgs: [id], limit: 1);
   }
 
+  static Future<List<Map<String, dynamic>>> getCartItem() async {
+    final db = await SQLHelper.db();
+    return db.query('items', where: "buy = 1", orderBy: "id");
+  }
+
   static Future<int> updateItem(
-      int id, String? name, String? price, String image, int buy) async {
+      int id, String? name, String? price, String? image, int buy) async {
     final db = await SQLHelper.db();
 
     final data = {
