@@ -61,10 +61,31 @@ class SQLHelper {
     return result;
   }
 
+  static Future<int> updateCartItems(int id, int buy) async {
+    final db = await SQLHelper.db();
+
+    final data = {
+      'buy': 0,
+    };
+
+    final result =
+        await db.update('items', data, where: "id = ?", whereArgs: [id]);
+    return result;
+  }
+
   static Future<void> deleteItem(int id) async {
     final db = await SQLHelper.db();
     try {
       await db.delete("items", where: "id = ?", whereArgs: [id]);
+    } catch (err) {
+      debugPrint("Something went wrong when deleting an item: $err");
+    }
+  }
+
+  static Future<void> deleteCartItem(int id) async {
+    final db = await SQLHelper.db();
+    try {
+      await db.delete("items", where: "buy = 1", whereArgs: [id]);
     } catch (err) {
       debugPrint("Something went wrong when deleting an item: $err");
     }

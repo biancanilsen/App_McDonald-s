@@ -67,7 +67,7 @@ class _RegisterPageState extends State<CartPage> {
                               setState(() {
                                 if (counter == 0) {
                                   var buy = 0;
-                                  _deleteItem(_items[index]['id'], buy);
+                                  _deleteCartItem(_items[index]['id'], buy);
                                 }
                                 counter--;
                               });
@@ -219,7 +219,16 @@ class _RegisterPageState extends State<CartPage> {
 
   Future<void> _deleteItem(int id, int buy) async {
     print('DELETADO');
-    await SQLHelper.deleteItem(id);
+    await SQLHelper.deleteItem(
+      id,
+    );
+
+    _refreshItems();
+  }
+
+  Future<void> _deleteCartItem(int id, int buy) async {
+    print('DELETADO');
+    await SQLHelper.updateCartItems(id, buy);
 
     _refreshItems();
   }
