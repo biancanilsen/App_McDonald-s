@@ -50,15 +50,11 @@ class SQLHelper {
   }
 
   static Future<int> updateItem(
-      int id, String? name, String? price, String? image, int buy) async {
+      int id, int buy) async {
     final db = await SQLHelper.db();
 
     final data = {
-      'name': name,
-      'price': price,
-      'image': image,
       'buy': buy,
-      'createdAt': DateTime.now().toString()
     };
 
     final result =
