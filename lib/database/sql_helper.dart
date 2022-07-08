@@ -49,8 +49,7 @@ class SQLHelper {
     return db.query('items', where: "buy = 1", orderBy: "id");
   }
 
-  static Future<int> updateItem(
-      int id, int buy) async {
+  static Future<int> updateItem(int id, int buy) async {
     final db = await SQLHelper.db();
 
     final data = {

@@ -65,6 +65,10 @@ class _RegisterPageState extends State<CartPage> {
                           OutlinedButton(
                             onPressed: () {
                               setState(() {
+                                if (counter == 0) {
+                                  var buy = 0;
+                                  _deleteItem(_items[index]['id'], buy);
+                                }
                                 counter--;
                               });
                             },
@@ -211,6 +215,13 @@ class _RegisterPageState extends State<CartPage> {
         onPressed: () => _refreshItems(),
       ),
     );
+  }
+
+  Future<void> _deleteItem(int id, int buy) async {
+    print('DELETADO');
+    await SQLHelper.deleteItem(id);
+
+    _refreshItems();
   }
 }
 
