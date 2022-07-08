@@ -65,7 +65,7 @@ class _RegisterPageState extends State<CartPage> {
                           OutlinedButton(
                             onPressed: () {
                               setState(() {
-                                if (counter == 0) {
+                                if (counter <= 0) {
                                   var buy = 0;
                                   _deleteCartItem(_items[index]['id'], buy);
                                 }
@@ -217,14 +217,14 @@ class _RegisterPageState extends State<CartPage> {
     );
   }
 
-  Future<void> _deleteItem(int id, int buy) async {
-    print('DELETADO');
-    await SQLHelper.deleteItem(
-      id,
-    );
+  // Future<void> _deleteItem(int id, int buy) async {
+  //   print('DELETADO');
+  //   await SQLHelper.deleteItem(
+  //     id,
+  //   );
 
-    _refreshItems();
-  }
+  //   _refreshItems();
+  // }
 
   Future<void> _deleteCartItem(int id, int buy) async {
     print('DELETADO');
