@@ -212,11 +212,6 @@ class _RegisterPageState extends State<CartPage> {
       //     Navigator.of(context).pushNamed('/home');
       //   },
       // ),
-
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () => _refreshItems(),
-      ),
     );
   }
 

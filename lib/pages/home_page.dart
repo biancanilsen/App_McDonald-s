@@ -146,12 +146,11 @@ class _HomePageState extends State<HomePage> {
                               onPressed: () async {
                                 var buy = 1;
 
-                                await _updateItem(_items[index]['id'], 1 ,buy);
+                                await _updateItem(_items[index]['id'], 1, buy);
                                 Navigator.of(context).pushNamed('/cart');
                               },
-                              child: Text(
-                                  'Comprar'), 
-                                  // onPressed: () => _showForm(_journals[index]['id']),
+                              child: Text('Comprar'),
+                              // onPressed: () => _showForm(_journals[index]['id']),
                             ),
                           ],
                         ),
@@ -159,10 +158,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () => _refreshItems(),
-      ),
     );
   }
 
@@ -175,8 +170,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _addItem() async {
     await SQLHelper.createItem(
-        'Mc Fritas Média', 'R\$ 5,90', 'assets/images/mc-fritas-media.png', 0, 0);
-         _refreshItems();
-
+        'Nuggets', 'R\$ 5,90', 'assets/images/nuggets.png', 0, 0);
+    _refreshItems();
   }
 }
