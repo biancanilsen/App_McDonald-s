@@ -63,14 +63,16 @@ class _RegisterPageState extends State<CartPage> {
                       child: Row(
                         children: [
                           OutlinedButton(
-                            onPressed: () {
-                              setState(() {
-                                if (counter <= 0) {
-                                  var buy = 0;
-                                  _deleteCartItem(_items[index]['id'], buy);
-                                }
-                                counter--;
-                              });
+                            onPressed: () async {
+                              var value = _items[index]['qtd'].toInt();
+                              value--;
+
+                              await _updateItem(_items[index]['id'], value, 1);
+
+                              if (_items[index]['qtd'] <= 1) {
+                                var buy = 0;
+                                _deleteCartItem(_items[index]['id'], buy);
+                              }
                             },
                             child: const Text('-'),
                           ),
@@ -78,13 +80,14 @@ class _RegisterPageState extends State<CartPage> {
                             onPressed: () {
                               debugPrint('Received click');
                             },
-                            child: Text('$counter'),
+                            child: Text(_items[index]['qtd'].toString()),
                           ),
                           OutlinedButton(
-                            onPressed: () {
-                              setState(() {
-                                counter++;
-                              });
+                            onPressed: () async {
+                              var value = _items[index]['qtd'].toInt();
+                              value++;
+
+                              await _updateItem(_items[index]['id'], value, 1);
                             },
                             child: const Text('+'),
                           ),
@@ -232,11 +235,17 @@ class _RegisterPageState extends State<CartPage> {
 
     _refreshItems();
   }
+
+  Future<void> _updateItem(int id, int qtd, int buy) async {
+    await SQLHelper.updateItem(id, qtd, buy);
+
+    _refreshItems();
+  }
 }
 
 Future<void> _addItem() async {
   await SQLHelper.createItem(
-      'Mc Fritas Média', 'R\$ 5,90', 'assets/images/mc-fritas-media.png', 0);
+      'Mc Fritas Média', 'R\$ 5,90', 'assets/images/mc-fritas-media.png', 0, 0);
 }
 
 class Produto {

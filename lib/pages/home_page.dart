@@ -146,11 +146,12 @@ class _HomePageState extends State<HomePage> {
                               onPressed: () async {
                                 var buy = 1;
 
-                                await _updateItem(_items[index]['id'], buy);
+                                await _updateItem(_items[index]['id'], 1 ,buy);
                                 Navigator.of(context).pushNamed('/cart');
                               },
                               child: Text(
-                                  'Comprar'), // onPressed: () => _showForm(_journals[index]['id']),
+                                  'Comprar'), 
+                                  // onPressed: () => _showForm(_journals[index]['id']),
                             ),
                           ],
                         ),
@@ -165,15 +166,17 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Future<void> _updateItem(int id, int buy) async {
+  Future<void> _updateItem(int id, int qtd, int buy) async {
     print('TESTE');
-    await SQLHelper.updateItem(id, buy);
+    await SQLHelper.updateItem(id, qtd, buy);
 
     _refreshItems();
   }
 
   Future<void> _addItem() async {
     await SQLHelper.createItem(
-        'Mc Fritas Média', 'R\$ 5,90', 'assets/images/mc-fritas-media.png', 0);
+        'Mc Fritas Média', 'R\$ 5,90', 'assets/images/mc-fritas-media.png', 0, 0);
+         _refreshItems();
+
   }
 }

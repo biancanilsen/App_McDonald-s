@@ -8,6 +8,7 @@ class SQLHelper {
         name TEXT,
         price TEXT,
         image TEXT,
+        qtd INTEGER,  
         buy INTEGER,
         createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
       )
@@ -25,10 +26,10 @@ class SQLHelper {
   }
 
   static Future<int> createItem(
-      String name, String price, String image, int buy) async {
+      String name, String price, String image, int qtd, int buy) async {
     final db = await SQLHelper.db();
 
-    final data = {'name': name, 'price': price, 'image': image, 'buy': buy};
+    final data = {'name': name, 'price': price, 'image': image, 'buy': buy, 'qtd': qtd};
     final id = await db.insert('items', data,
         conflictAlgorithm: sql.ConflictAlgorithm.replace);
     return id;
@@ -49,10 +50,11 @@ class SQLHelper {
     return db.query('items', where: "buy = 1", orderBy: "id");
   }
 
-  static Future<int> updateItem(int id, int buy) async {
+  static Future<int> updateItem(int id, int qtd, int buy) async {
     final db = await SQLHelper.db();
 
     final data = {
+      'qtd': qtd,
       'buy': buy,
     };
 
