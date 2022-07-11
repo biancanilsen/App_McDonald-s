@@ -50,6 +50,7 @@ class _RegisterPageState extends State<CartPage> {
             : ListView.builder(
                 itemCount: _items.length,
                 itemBuilder: (context, index) => Container(
+                    height: 70,
                     decoration: BoxDecoration(
                         image: DecorationImage(
                       alignment: Alignment.bottomLeft,
