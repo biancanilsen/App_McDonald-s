@@ -42,7 +42,7 @@ class _RegisterPageState extends State<CartPage> {
         title: Text('Carrinho de compras'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(20.0),
         child: _cartIsEmpity
             ? const Center(
                 child: CircularProgressIndicator(),
@@ -50,51 +50,52 @@ class _RegisterPageState extends State<CartPage> {
             : ListView.builder(
                 itemCount: _items.length,
                 itemBuilder: (context, index) => Container(
-                    height: 70,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      alignment: Alignment.bottomLeft,
-                      image: AssetImage(_items[index]['image']),
-                    )),
-                    margin: const EdgeInsets.all(17),
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        left: 120.0,
-                      ),
-                      child: Row(
-                        children: [
-                          OutlinedButton(
-                            onPressed: () async {
-                              var value = _items[index]['qtd'].toInt();
-                              value--;
+                  height: 70,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                    alignment: Alignment.bottomLeft,
+                    image: AssetImage(_items[index]['image']),
+                  )),
+                  margin: const EdgeInsets.all(17),
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      left: 120.0,
+                    ),
+                    child: Row(
+                      children: [
+                        OutlinedButton(
+                          onPressed: () async {
+                            var value = _items[index]['qtd'].toInt();
+                            value--;
 
-                              await _updateItem(_items[index]['id'], value, 1);
+                            await _updateItem(_items[index]['id'], value, 1);
 
-                              if (_items[index]['qtd'] <= 1) {
-                                var buy = 0;
-                                _deleteCartItem(_items[index]['id'], buy);
-                              }
-                            },
-                            child: const Text('-'),
-                          ),
-                          OutlinedButton(
-                            onPressed: () {
-                              debugPrint('Received click');
-                            },
-                            child: Text(_items[index]['qtd'].toString()),
-                          ),
-                          OutlinedButton(
-                            onPressed: () async {
-                              var value = _items[index]['qtd'].toInt();
-                              value++;
+                            if (_items[index]['qtd'] <= 1) {
+                              var buy = 0;
+                              _deleteCartItem(_items[index]['id'], buy);
+                            }
+                          },
+                          child: const Text('-'),
+                        ),
+                        OutlinedButton(
+                          onPressed: () {
+                            debugPrint('Received click');
+                          },
+                          child: Text(_items[index]['qtd'].toString()),
+                        ),
+                        OutlinedButton(
+                          onPressed: () async {
+                            var value = _items[index]['qtd'].toInt();
+                            value++;
 
-                              await _updateItem(_items[index]['id'], value, 1);
-                            },
-                            child: const Text('+'),
-                          ),
-                        ],
-                      ),
-                    )),
+                            await _updateItem(_items[index]['id'], value, 1);
+                          },
+                          child: const Text('+'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
 
         // SingleChildScrollView(
@@ -207,12 +208,16 @@ class _RegisterPageState extends State<CartPage> {
         //     ),
         //   ),
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   child: Icon(Icons.add),
-      //   onPressed: () {
-      //     Navigator.of(context).pushNamed('/home');
-      //   },
-      // ),
+      bottomNavigationBar:
+          BottomAppBar(color: Colors.yellow, child: Container(height: 50)),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          // Add your onPressed code here!
+        },
+        label: const Text('     Finalizar pedido e pagar na entrega     '),
+        icon: const Icon(Icons.thumb_up),
+        backgroundColor: Colors.green,
+      ),
     );
   }
 

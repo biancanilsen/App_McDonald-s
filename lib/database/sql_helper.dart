@@ -6,7 +6,7 @@ class SQLHelper {
     await database.execute("""CREATE TABLE items(
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
         name TEXT,
-        price TEXT,
+        price DOUBLE,
         image TEXT,
         qtd INTEGER,  
         buy INTEGER,
@@ -29,7 +29,13 @@ class SQLHelper {
       String name, String price, String image, int qtd, int buy) async {
     final db = await SQLHelper.db();
 
-    final data = {'name': name, 'price': price, 'image': image, 'buy': buy, 'qtd': qtd};
+    final data = {
+      'name': name,
+      'price': price,
+      'image': image,
+      'buy': buy,
+      'qtd': qtd
+    };
     final id = await db.insert('items', data,
         conflictAlgorithm: sql.ConflictAlgorithm.replace);
     return id;
