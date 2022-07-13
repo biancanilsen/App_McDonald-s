@@ -218,14 +218,23 @@ class _RegisterPageState extends State<CartPage> {
       ),
       bottomNavigationBar: BottomAppBar(
           color: Colors.yellow,
-          child: Container(height: 50, child: Text(total.toString()))),
+          child: Container(
+              height: 50,
+              child: Text(
+                total.toString(),
+                style: TextStyle(
+                  color: Colors.green[700],
+                  fontWeight: FontWeight.bold,
+                  fontSize: 45,
+                ),
+              ))),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           // Add your onPressed code here!
         },
         label: const Text('     Finalizar pedido e pagar na entrega     '),
         icon: const Icon(Icons.thumb_up),
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.green[700],
       ),
     );
   }

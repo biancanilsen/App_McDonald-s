@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-
 import '../database/sql_helper.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,7 +10,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Map<String, dynamic>> _items = [];
-
   bool _isLoading = true;
   // This function is used to fetch all data from the database
   void _refreshItems() async {
@@ -146,7 +144,8 @@ class _HomePageState extends State<HomePage> {
                               onPressed: () async {
                                 var buy = 1;
 
-                                await _updateItem(_items[index]['id'], 1, buy, _items[index]['price']);
+                                await _updateItem(_items[index]['id'], 1, buy,
+                                    _items[index]['price']);
                                 Navigator.of(context).pushNamed('/cart');
                               },
                               child: Text('Comprar'),
@@ -170,7 +169,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _addItem() async {
     await SQLHelper.createItem(
-        'Molho Barbecue', 8.99, 'assets/images/molho-barbecue.png', 0, 0, 8.99);
+        'Mc Flury Laka', 7.99, 'assets/images/mc-flurry-laka.png', 0, 0, 7.99);
     _refreshItems();
   }
 }
