@@ -181,23 +181,23 @@ class _RegisterPageState extends State<CartPage> {
         //                     side: BorderSide(color: Colors.green)),
         //                 // crossAxisAlignment: CrossAxisAlignment.stretch,
         //                 color: (Colors.green[600]),
-        //                 onPressed: () => showDialog<String>(
-        //                       context: context,
-        //                       builder: (BuildContext context) =>
-        //                           AlertDialog(
-        //                         title: const Text(
-        //                             'Pedido realizado com sucesso!'),
-        //                         content:
-        //                             const Text('Receba em seu endereço.'),
-        //                         actions: <Widget>[
-        //                           TextButton(
-        //                             onPressed: () =>
-        //                                 Navigator.pop(context, 'Cancel'),
-        //                             child: const Text('Ok'),
-        //                           ),
-        //                         ],
-        //                       ),
-        //                     ),
+        // onPressed: () => showDialog<String>(
+        //       context: context,
+        //       builder: (BuildContext context) =>
+        //           AlertDialog(
+        //         title: const Text(
+        //             'Pedido realizado com sucesso!'),
+        //         content:
+        //             const Text('Receba em seu endereço.'),
+        //         actions: <Widget>[
+        //           TextButton(
+        //             onPressed: () =>
+        //                 Navigator.pop(context, 'Cancel'),
+        //             child: const Text('Ok'),
+        //           ),
+        //         ],
+        //       ),
+        //     ),
         //                 child: Container(
         //                   width: double.infinity,
         //                   height: 50,
@@ -217,21 +217,32 @@ class _RegisterPageState extends State<CartPage> {
         //   ),
       ),
       bottomNavigationBar: BottomAppBar(
-          color: Colors.yellow,
+          color: Colors.red,
           child: Container(
               height: 50,
+              margin: const EdgeInsets.only(left: 20.0),
               child: Text(
-                total.toString(),
+                total.toStringAsFixed(2),
                 style: TextStyle(
-                  color: Colors.green[700],
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 45,
                 ),
               ))),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Add your onPressed code here!
-        },
+        onPressed: () => showDialog<String>(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+            title: const Text('Pedido realizado com sucesso!'),
+            content: const Text('Receba em seu endereço.'),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () => Navigator.pop(context, 'Cancel'),
+                child: const Text('Ok'),
+              ),
+            ],
+          ),
+        ),
         label: const Text('     Finalizar pedido e pagar na entrega     '),
         icon: const Icon(Icons.thumb_up),
         backgroundColor: Colors.green[700],
