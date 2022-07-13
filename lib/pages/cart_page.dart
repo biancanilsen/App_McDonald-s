@@ -219,7 +219,7 @@ class _RegisterPageState extends State<CartPage> {
       bottomNavigationBar: BottomAppBar(
           color: Colors.red,
           child: Container(
-              height: 40,
+              height: 45,
               margin: const EdgeInsets.only(left: 20.0, top: 10.0),
               child: Text(
                 'R\$ ' + total.toStringAsFixed(2),
@@ -244,7 +244,7 @@ class _RegisterPageState extends State<CartPage> {
           ),
         ),
         label: const Text('     Finalizar pedido e pagar na entrega     '),
-        icon: const Icon(Icons.thumb_up),
+        icon: const Icon(Icons.done),
         backgroundColor: Colors.green[700],
       ),
     );
