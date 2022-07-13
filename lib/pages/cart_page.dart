@@ -219,14 +219,14 @@ class _RegisterPageState extends State<CartPage> {
       bottomNavigationBar: BottomAppBar(
           color: Colors.red,
           child: Container(
-              height: 50,
-              margin: const EdgeInsets.only(left: 20.0),
+              height: 40,
+              margin: const EdgeInsets.only(left: 20.0, top: 10.0),
               child: Text(
-                total.toStringAsFixed(2),
+                'R\$ ' + total.toStringAsFixed(2),
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: 45,
+                  fontSize: 30,
                 ),
               ))),
       floatingActionButton: FloatingActionButton.extended(
