@@ -127,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                         _items[index]['name'],
                       ),
                       subtitle: Text(
-                        _items[index]['price'],
+                        _items[index]['price'].toString(),
                         style: TextStyle(
                           color: Colors.green,
                           fontWeight: FontWeight.bold,
@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                               onPressed: () async {
                                 var buy = 1;
 
-                                await _updateItem(_items[index]['id'], 1, buy);
+                                await _updateItem(_items[index]['id'], 1, buy, _items[index]['price']);
                                 Navigator.of(context).pushNamed('/cart');
                               },
                               child: Text('Comprar'),
@@ -161,16 +161,16 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Future<void> _updateItem(int id, int qtd, int buy) async {
+  Future<void> _updateItem(int id, int qtd, int buy, double totalPrice) async {
     print('TESTE');
-    await SQLHelper.updateItem(id, qtd, buy);
+    await SQLHelper.updateItem(id, qtd, buy, totalPrice);
 
     _refreshItems();
   }
 
   Future<void> _addItem() async {
     await SQLHelper.createItem(
-        'Molho Barbecue', 'R\$ 4,90', 'assets/images/molho-barbecue.png', 0, 0);
+        'Molho Barbecue', 8.99, 'assets/images/molho-barbecue.png', 0, 0, 8.99);
     _refreshItems();
   }
 }

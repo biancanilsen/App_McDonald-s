@@ -17,7 +17,7 @@ class _RegisterPageState extends State<CartPage> {
   List<Map<String, dynamic>> _items = [];
 
   bool _cartIsEmpity = true;
-
+  double total = 0.0;
   int counter = 0;
   int valor = 0;
 
@@ -67,8 +67,12 @@ class _RegisterPageState extends State<CartPage> {
                           onPressed: () async {
                             var value = _items[index]['qtd'].toInt();
                             value--;
+                            var price = value * _items[index]['price'];
 
-                            await _updateItem(_items[index]['id'], value, 1);
+                            await _updateItem(
+                                _items[index]['id'], value, 1, price);
+
+                            total = total - _items[index]['price'];
 
                             if (_items[index]['qtd'] <= 1) {
                               var buy = 0;
@@ -87,8 +91,12 @@ class _RegisterPageState extends State<CartPage> {
                           onPressed: () async {
                             var value = _items[index]['qtd'].toInt();
                             value++;
+                            var price = value * _items[index]['price'];
 
-                            await _updateItem(_items[index]['id'], value, 1);
+                            await _updateItem(
+                                _items[index]['id'], value, 1, price);
+
+                            total = total + _items[index]['price'];
                           },
                           child: const Text('+'),
                         ),
@@ -208,8 +216,9 @@ class _RegisterPageState extends State<CartPage> {
         //     ),
         //   ),
       ),
-      bottomNavigationBar:
-          BottomAppBar(color: Colors.yellow, child: Container(height: 50)),
+      bottomNavigationBar: BottomAppBar(
+          color: Colors.yellow,
+          child: Container(height: 50, child: Text(total.toString()))),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           // Add your onPressed code here!
@@ -237,16 +246,11 @@ class _RegisterPageState extends State<CartPage> {
     _refreshItems();
   }
 
-  Future<void> _updateItem(int id, int qtd, int buy) async {
-    await SQLHelper.updateItem(id, qtd, buy);
+  Future<void> _updateItem(int id, int qtd, int buy, double totalPrice) async {
+    await SQLHelper.updateItem(id, qtd, buy, totalPrice);
 
     _refreshItems();
   }
-}
-
-Future<void> _addItem() async {
-  await SQLHelper.createItem(
-      'Mc Fritas Média', 'R\$ 5,90', 'assets/images/mc-fritas-media.png', 0, 0);
 }
 
 class Produto {
