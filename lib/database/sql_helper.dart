@@ -26,8 +26,8 @@ class SQLHelper {
     );
   }
 
-  static Future<int> createItem(
-      String name, double price, String image, int qtd, int buy, double totalPrice) async {
+  static Future<int> createItem(String name, double price, String image,
+      int qtd, int buy, double totalPrice) async {
     final db = await SQLHelper.db();
 
     final data = {
@@ -58,14 +58,11 @@ class SQLHelper {
     return db.query('items', where: "buy = 1", orderBy: "id");
   }
 
-  static Future<int> updateItem(int id, int qtd, int buy, double totalPrice) async {
+  static Future<int> updateItem(
+      int id, int qtd, int buy, double totalPrice) async {
     final db = await SQLHelper.db();
 
-    final data = {
-      'qtd': qtd,
-      'buy': buy,
-      'totalPrice': totalPrice
-    };
+    final data = {'qtd': qtd, 'buy': buy, 'totalPrice': totalPrice};
 
     final result =
         await db.update('items', data, where: "id = ?", whereArgs: [id]);
@@ -92,13 +89,4 @@ class SQLHelper {
       debugPrint("Something went wrong when deleting an item: $err");
     }
   }
-
-  // static Future<void> deleteCartItem(int id) async {
-  //   final db = await SQLHelper.db();
-  //   try {
-  //     await db.delete("items", where: "buy = 1", whereArgs: [id]);
-  //   } catch (err) {
-  //     debugPrint("Something went wrong when deleting an item: $err");
-  //   }
-  // }
 }

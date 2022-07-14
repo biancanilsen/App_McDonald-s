@@ -51,14 +51,14 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            ListTile(
-              leading: Icon(Icons.sell),
-              title: Text('Cupons'),
-              onTap: () {
-                Navigator.of(context).pushNamed('/coupon');
-              },
-            ),
-            SizedBox(height: 400),
+            // ListTile(
+            //   leading: Icon(Icons.sell),
+            //   title: Text('Cupons'),
+            //   onTap: () {
+            //     Navigator.of(context).pushNamed('/coupon');
+            //   },
+            // ),
+            SizedBox(height: 470),
             ListTile(
               // contentPadding: ,
               leading: Icon(Icons.logout),
@@ -169,7 +169,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _addItem() async {
     await SQLHelper.createItem(
-        'Cheeseburguer', 8.90, 'assets/images/cheeseburguer.png', 0, 0, 8.90);
+        'Nuggets', 4.50, 'assets/images/nuggets.png', 0, 0, 4.50);
     _refreshItems();
   }
 }

@@ -21,22 +21,8 @@ class _RegisterPageState extends State<CartPage> {
   int counter = 0;
   int valor = 0;
 
-  void _refresh() async {
-    final data = await SQLHelper.getCartItem();
-
-    setState(() {
-      _items = data;
-      _cartIsEmpity = false;
-    });
-  }
-
   void _refreshItems() async {
     final data = await SQLHelper.getCartItem();
-    data.forEach((item) {
-      total += item["totalPrice"];
-    });
-
-    print(total);
     setState(() {
       _items = data;
       _cartIsEmpity = false;
@@ -141,7 +127,7 @@ class _RegisterPageState extends State<CartPage> {
             content: const Text('Receba em seu endereço.'),
             actions: <Widget>[
               TextButton(
-                onPressed: () => Navigator.pop(context, 'Cancel'),
+                onPressed: () => Navigator.of(context).pushNamed('/home'),
                 child: const Text('Ok'),
               ),
             ],
@@ -154,16 +140,40 @@ class _RegisterPageState extends State<CartPage> {
     );
   }
 
+  Future<void> _deleteCart(int id) async {
+    print('DELETADO');
+    await SQLHelper.deleteItem(id);
+
+    _refreshItems();
+  }
+
   Future<void> _deleteCartItem(int id, int buy) async {
     print('DELETADO');
     await SQLHelper.updateCartItems(id, buy);
 
-    _refresh();
+    _refreshItems();
   }
 
   Future<void> _updateItem(int id, int qtd, int buy, double totalPrice) async {
     await SQLHelper.updateItem(id, qtd, buy, totalPrice);
 
-    _refresh();
+    _refreshItems();
+  }
+}
+
+class Produto {
+  final String nome;
+  final int quantidade;
+  final double valor;
+
+  Produto(
+    this.nome,
+    this.quantidade,
+    this.valor,
+  );
+
+  @override
+  String toString() {
+    return 'Produto{nome: $nome, quantidade: $quantidade, valor: $valor}';
   }
 }
