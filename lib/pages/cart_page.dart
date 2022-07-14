@@ -105,116 +105,6 @@ class _RegisterPageState extends State<CartPage> {
                   ),
                 ),
               ),
-
-        // SingleChildScrollView(
-        //     child: Column(
-        //       children: [
-        //         Column(
-        //           mainAxisAlignment: MainAxisAlignment.center,
-        //           children: <Widget>[
-        //             Container(
-        //                 height: 150,
-        //                 width: 360,
-        //                 // color: Colors.red,
-        //                 child: Row(
-        //                   children: [
-        //                     Container(
-        //                         height: 100,
-        //                         width: 150,
-        //                         decoration: BoxDecoration(
-        //                             image: DecorationImage(
-        //                           alignment: Alignment.bottomCenter,
-        //                           image: AssetImage(
-        //                               'assets/images/quarteirão.png'),
-        //                         ))),
-        //                     // Container(
-        //                     OutlinedButton(
-        //                       onPressed: () {
-        //                         setState(() {
-        //                           counter--;
-        //                         });
-        //                       },
-        //                       child: const Text('-'),
-        //                     ),
-        //                     OutlinedButton(
-        //                       onPressed: () {
-        //                         debugPrint('Received click');
-        //                       },
-        //                       child: Text('$counter'),
-        //                     ),
-        //                     OutlinedButton(
-        //                       onPressed: () {
-        //                         setState(() {
-        //                           counter++;
-        //                         });
-        //                       },
-        //                       child: const Text('+'),
-        //                     ),
-        //                   ],
-        //                 )),
-        //             SizedBox(height: 10),
-        // RaisedButton(
-        //     shape: RoundedRectangleBorder(
-        //         borderRadius: BorderRadius.circular(12.0),
-        //         side: BorderSide(color: Colors.yellow)),
-        //     // crossAxisAlignment: CrossAxisAlignment.stretch,
-        //     color: (Colors.yellow[600]),
-        //     onPressed: () async {
-        //       await _addItem();
-        //     },
-        //     child: Container(
-        //       width: double.infinity,
-        //       height: 50,
-        //       child: Center(
-        //           child: Text(
-        //         'Total: R\$ $valor',
-        //         style: TextStyle(
-        //           fontWeight: FontWeight.bold,
-        //           fontSize: 18,
-        //         ),
-        //       )),
-        //     )),
-        //             SizedBox(height: 400),
-        //             RaisedButton(
-        //                 shape: RoundedRectangleBorder(
-        //                     borderRadius: BorderRadius.circular(12.0),
-        //                     side: BorderSide(color: Colors.green)),
-        //                 // crossAxisAlignment: CrossAxisAlignment.stretch,
-        //                 color: (Colors.green[600]),
-        // onPressed: () => showDialog<String>(
-        //       context: context,
-        //       builder: (BuildContext context) =>
-        //           AlertDialog(
-        //         title: const Text(
-        //             'Pedido realizado com sucesso!'),
-        //         content:
-        //             const Text('Receba em seu endereço.'),
-        //         actions: <Widget>[
-        //           TextButton(
-        //             onPressed: () =>
-        //                 Navigator.pop(context, 'Cancel'),
-        //             child: const Text('Ok'),
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //                 child: Container(
-        //                   width: double.infinity,
-        //                   height: 50,
-        //                   child: Center(
-        //                       child: Text(
-        //                     'Finalizar pedido e pagar pelo app',
-        //                     style: TextStyle(
-        //                       fontWeight: FontWeight.bold,
-        //                       fontSize: 18,
-        //                     ),
-        //                   )),
-        //                 )),
-        //           ],
-        //         ),
-        //       ],
-        //     ),
-        //   ),
       ),
       bottomNavigationBar: BottomAppBar(
           color: Colors.red,
@@ -243,21 +133,12 @@ class _RegisterPageState extends State<CartPage> {
             ],
           ),
         ),
-        label: const Text('     Finalizar pedido e pagar na entrega     '),
+        label: const Text('  Finalizar pedido e pagar na entrega     '),
         icon: const Icon(Icons.done),
         backgroundColor: Colors.green[700],
       ),
     );
   }
-
-  // Future<void> _deleteItem(int id, int buy) async {
-  //   print('DELETADO');
-  //   await SQLHelper.deleteItem(
-  //     id,
-  //   );
-
-  //   _refreshItems();
-  // }
 
   Future<void> _deleteCartItem(int id, int buy) async {
     print('DELETADO');

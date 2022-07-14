@@ -76,9 +76,9 @@ class _HomePageState extends State<HomePage> {
           RaisedButton(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12.0),
-                  side: BorderSide(color: Colors.yellow)),
+                  side: BorderSide(color: Colors.red)),
               // crossAxisAlignment: CrossAxisAlignment.stretch,
-              color: (Colors.yellow[600]),
+              color: (Colors.red),
               onPressed: () async {
                 await _addItem();
               },
@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                 height: 10,
                 child: Center(
                     child: Text(
-                  'Total: R\$',
+                  '-',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 2,
@@ -125,7 +125,7 @@ class _HomePageState extends State<HomePage> {
                         _items[index]['name'],
                       ),
                       subtitle: Text(
-                        _items[index]['price'].toString(),
+                        'R\$ ' + _items[index]['price'].toStringAsFixed(2),
                         style: TextStyle(
                           color: Colors.green,
                           fontWeight: FontWeight.bold,
@@ -169,7 +169,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _addItem() async {
     await SQLHelper.createItem(
-        'Mc Flury Laka', 7.99, 'assets/images/mc-flurry-laka.png', 0, 0, 7.99);
+        'Cheeseburguer', 8.90, 'assets/images/cheeseburguer.png', 0, 0, 8.90);
     _refreshItems();
   }
 }
