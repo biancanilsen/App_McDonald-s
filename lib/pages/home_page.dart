@@ -11,12 +11,24 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<Map<String, dynamic>> _items = [];
   bool _isLoading = true;
+  double total = 0.0;
   // This function is used to fetch all data from the database
   void _refreshItems() async {
     final data = await SQLHelper.getItems();
     setState(() {
       _items = data;
       _isLoading = false;
+      data.forEach((item) {
+        total += item["totalPrice"];
+      });
+    });
+  }
+
+  void _refresh() async {
+    final data = await SQLHelper.getCartItem();
+
+    setState(() {
+      _items = data;
     });
   }
 
@@ -65,6 +77,11 @@ class _HomePageState extends State<HomePage> {
               title: Text('Logout'),
               onTap: () {
                 Navigator.of(context).pushNamed('/');
+                for (var i = 0; i < _items.length; i++) {
+                  var buy = 0;
+                  var qtd = 0;
+                  _deleteCartItem(_items[i]['id'], buy, qtd);
+                }
               },
             ),
           ],
@@ -152,7 +169,14 @@ class _HomePageState extends State<HomePage> {
                                 if (_items[index]['qtd'] >= 1) {
                                   var value = _items[index]['qtd'].toInt();
                                   value++;
-                                  _refreshItems();
+                                  var price = value * _items[index]['price'];
+
+                                  await _updateItem(
+                                      _items[index]['id'], value, 1, price);
+
+                                  total = total + _items[index]['price'];
+
+                                  // _refreshItems();
                                 }
                               },
                               child: Text('Comprar'),
@@ -172,6 +196,13 @@ class _HomePageState extends State<HomePage> {
     await SQLHelper.updateItem(id, qtd, buy, totalPrice);
 
     _refreshItems();
+  }
+
+  Future<void> _deleteCartItem(int id, int buy, int qtd) async {
+    print('DELETADO');
+    await SQLHelper.updateCartItems(id, buy, qtd);
+
+    _refresh();
   }
 
   Future<void> _addItem() async {

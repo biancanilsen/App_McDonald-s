@@ -69,11 +69,12 @@ class SQLHelper {
     return result;
   }
 
-  static Future<int> updateCartItems(int id, int buy) async {
+  static Future<int> updateCartItems(int id, int buy, int qtd) async {
     final db = await SQLHelper.db();
 
     final data = {
-      'buy': 0,
+      'buy': buy,
+      'qtd': qtd,
     };
 
     final result =
