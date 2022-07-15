@@ -126,8 +126,14 @@ class _RegisterPageState extends State<CartPage> {
             title: const Text('Pedido realizado com sucesso!'),
             content: const Text('Receba em seu endereço.'),
             actions: <Widget>[
-              TextButton(
-                onPressed: () => Navigator.of(context).pushNamed('/home'),
+              OutlinedButton(
+                onPressed: () {
+                  for (var i = 0; i < _items.length; i++) {
+                    var buy = 0;
+                    _deleteCartItem(_items[i]['id'], buy);
+                  }
+                  Navigator.of(context).pushNamed('/home');
+                },
                 child: const Text('Ok'),
               ),
             ],
