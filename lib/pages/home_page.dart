@@ -146,7 +146,14 @@ class _HomePageState extends State<HomePage> {
 
                                 await _updateItem(_items[index]['id'], 1, buy,
                                     _items[index]['price']);
+
                                 Navigator.of(context).pushNamed('/cart');
+
+                                if (_items[index]['qtd'] >= 1) {
+                                  var value = _items[index]['qtd'].toInt();
+                                  value++;
+                                  _refreshItems();
+                                }
                               },
                               child: Text('Comprar'),
                               // onPressed: () => _showForm(_journals[index]['id']),
@@ -168,8 +175,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> _addItem() async {
-    await SQLHelper.createItem('Free Refil 300ml Mac', 8.90,
-        'assets/images/coca-cola-300ml.png', 0, 0, 8.90);
+    await SQLHelper.createItem('Sundae Caramelo', 11.50,
+        'assets/images/sundae-caramelo.png', 0, 0, 11.50);
     _refreshItems();
   }
 }

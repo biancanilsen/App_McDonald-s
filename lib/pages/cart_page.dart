@@ -2,7 +2,6 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/material.dart';
-import 'package:primeiro_projeto/controllers/app_controller.dart';
 
 import '../database/sql_helper.dart';
 
@@ -20,7 +19,6 @@ class _RegisterPageState extends State<CartPage> {
   double total = 0.0;
   int counter = 0;
   int valor = 0;
-
 
   void _refresh() async {
     final data = await SQLHelper.getCartItem();

@@ -61,7 +61,25 @@ class _LoginPageState extends State<LoginPage> {
                       if (email == 'danilo@hotmail.com' && senha == '123') {
                         Navigator.of(context).pushNamed('/home');
                         print('Login realizado com sucesso');
-                      }
+                      } else
+                        showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: const Text('Login inválido!'),
+                            content: const Text('Email ou senha incorretos'),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(context, 'Cancel'),
+                                child: const Text('Cancel'),
+                              ),
+                              TextButton(
+                                onPressed: () => Navigator.pop(context, 'OK'),
+                                child: const Text('OK'),
+                              ),
+                            ],
+                          ),
+                        );
                     },
                     child: Container(
                       width: double.infinity,
@@ -71,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                       )),
                     )),
               ],
-            ), 
+            ),
           ),
         ),
       )),
