@@ -21,8 +21,23 @@ class _RegisterPageState extends State<CartPage> {
   int counter = 0;
   int valor = 0;
 
+
+  void _refresh() async {
+    final data = await SQLHelper.getCartItem();
+
+    setState(() {
+      _items = data;
+      _cartIsEmpity = false;
+    });
+  }
+
   void _refreshItems() async {
     final data = await SQLHelper.getCartItem();
+    data.forEach((item) {
+      total += item["totalPrice"];
+    });
+
+    print(total);
     setState(() {
       _items = data;
       _cartIsEmpity = false;
@@ -126,8 +141,14 @@ class _RegisterPageState extends State<CartPage> {
             title: const Text('Pedido realizado com sucesso!'),
             content: const Text('Receba em seu endereço.'),
             actions: <Widget>[
-              TextButton(
-                onPressed: () => Navigator.of(context).pushNamed('/home'),
+              OutlinedButton(
+                onPressed: () {
+                  for (var i = 0; i < _items.length; i++) {
+                    var buy = 0;
+                    _deleteCartItem(_items[i]['id'], buy);
+                  }
+                  Navigator.of(context).pushNamed('/home');
+                },
                 child: const Text('Ok'),
               ),
             ],
@@ -151,13 +172,13 @@ class _RegisterPageState extends State<CartPage> {
     print('DELETADO');
     await SQLHelper.updateCartItems(id, buy);
 
-    _refreshItems();
+    _refresh();
   }
 
   Future<void> _updateItem(int id, int qtd, int buy, double totalPrice) async {
     await SQLHelper.updateItem(id, qtd, buy, totalPrice);
 
-    _refreshItems();
+    _refresh();
   }
 }
 
