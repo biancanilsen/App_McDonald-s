@@ -168,8 +168,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> _addItem() async {
-    await SQLHelper.createItem(
-        'Nuggets', 4.50, 'assets/images/nuggets.png', 0, 0, 4.50);
+    await SQLHelper.createItem('Free Refil 300ml Mac', 8.90,
+        'assets/images/coca-cola-300ml.png', 0, 0, 8.90);
     _refreshItems();
   }
 }
