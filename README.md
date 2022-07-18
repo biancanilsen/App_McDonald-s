@@ -1,4 +1,4 @@
-# POC aplicativo de entrega de comida
+# POC app Mc Donalds em FLutter
 
 A new Flutter project.
 
