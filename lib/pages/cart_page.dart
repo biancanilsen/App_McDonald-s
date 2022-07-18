@@ -86,12 +86,11 @@ class _RegisterPageState extends State<CartPage> {
                                 _items[index]['id'], value, 1, price);
 
                             total = total - _items[index]['price'];
-
+                            print(_items[index]['qtd']);
                             if (_items[index]['qtd'] <= 1) {
                               var buy = 0;
                               var qtd = 0;
-
-                              _deleteCartItem(_items[index]['id'], buy, qtd);
+                              _deleteCartItem(_items[index]['id'], qtd);
                             }
                           },
                           child: const Text('-'),
@@ -144,9 +143,7 @@ class _RegisterPageState extends State<CartPage> {
               OutlinedButton(
                 onPressed: () {
                   for (var i = 0; i < _items.length; i++) {
-                    var buy = 0;
-                    var qtd = 0;
-                    _deleteCartItem(_items[i]['id'], buy, qtd);
+                    _deleteCartItem(_items[i]['id'], 0);
                   }
                   Navigator.of(context).pushNamed('/home');
                 },
@@ -169,9 +166,9 @@ class _RegisterPageState extends State<CartPage> {
     _refreshItems();
   }
 
-  Future<void> _deleteCartItem(int id, int buy, int qtd) async {
+  Future<void> _deleteCartItem(int id, int qtd) async {
     print('DELETADO');
-    await SQLHelper.updateCartItems(id, buy, qtd);
+    await SQLHelper.updateCartItems(id, qtd);
 
     _refresh();
   }

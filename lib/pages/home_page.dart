@@ -161,12 +161,11 @@ class _HomePageState extends State<HomePage> {
                               onPressed: () async {
                                 var buy = 1;
 
-                                await _updateItem(_items[index]['id'], 1, buy,
-                                    _items[index]['price']);
-
-                                Navigator.of(context).pushNamed('/cart');
-
-                                if (_items[index]['qtd'] >= 1) {
+                                if (_items[index]['qtd'] == 0) {
+                                  await _updateItem(_items[index]['id'], 1, buy,
+                                      _items[index]['price']);
+                                  // _refreshItems();
+                                } else {
                                   var value = _items[index]['qtd'].toInt();
                                   value++;
                                   var price = value * _items[index]['price'];
@@ -175,9 +174,8 @@ class _HomePageState extends State<HomePage> {
                                       _items[index]['id'], value, 1, price);
 
                                   total = total + _items[index]['price'];
-
-                                  // _refreshItems();
                                 }
+                                Navigator.of(context).pushNamed('/cart');
                               },
                               child: Text('Comprar'),
                               // onPressed: () => _showForm(_journals[index]['id']),
@@ -200,7 +198,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _deleteCartItem(int id, int buy, int qtd) async {
     print('DELETADO');
-    await SQLHelper.updateCartItems(id, buy, qtd);
+    await SQLHelper.updateCartItems(id, buy);
 
     _refresh();
   }

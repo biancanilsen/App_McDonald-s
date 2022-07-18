@@ -1,4 +1,4 @@
-# primeiro_projeto
+# POC aplicativo de entrega de comida
 
 A new Flutter project.
 
