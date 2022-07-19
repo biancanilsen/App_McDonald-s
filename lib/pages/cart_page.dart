@@ -82,16 +82,17 @@ class _RegisterPageState extends State<CartPage> {
                             value--;
                             var price = value * _items[index]['price'];
 
-                            await _updateItem(
-                                _items[index]['id'], value, 1, price);
-
                             total = total - _items[index]['price'];
                             print(_items[index]['qtd']);
                             if (_items[index]['qtd'] <= 1) {
                               var buy = 0;
                               var qtd = 0;
-                             await _deleteCartItem(_items[index]['id'], qtd);
+                              await _deleteCartItem(_items[index]['id'], qtd);
+                            } else {
+                              await _updateItem(
+                                  _items[index]['id'], value, 1, price);
                             }
+                            ;
                           },
                           child: const Text('-'),
                         ),

@@ -61,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                       if (email == 'danilo@hotmail.com' && senha == '123') {
                         Navigator.of(context).pushNamed('/home');
                         print('Login realizado com sucesso');
-                      } else
+                      } else {
                         showDialog<String>(
                           context: context,
                           builder: (BuildContext context) => AlertDialog(
@@ -80,6 +80,8 @@ class _LoginPageState extends State<LoginPage> {
                             ],
                           ),
                         );
+                      }
+                      ;
                     },
                     child: Container(
                       width: double.infinity,

@@ -4,6 +4,7 @@ import 'package:primeiro_projeto/controllers/app_controller.dart';
 import 'package:primeiro_projeto/pages/login_page.dart';
 import 'package:primeiro_projeto/pages/cart_page.dart';
 import 'package:primeiro_projeto/pages/coupon_page.dart';
+import 'package:primeiro_projeto/pages/about_page.dart';
 
 import '../pages/home_page.dart';
 
@@ -27,6 +28,7 @@ class AppWidget extends StatelessWidget {
             routes: {
               '/': (context) => const LoginPage(),
               '/home': (context) => HomePage(),
+              '/about': (context) => const AboutPage(),
               '/cart': (context) => const CartPage(),
               '/coupon': (context) => const CouponPage(),
             });
