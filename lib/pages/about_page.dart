@@ -37,7 +37,7 @@ class _AboutPageState extends State<AboutPage> {
         },
         label: const Text('               Visite nosso menu                  '),
         icon: const Icon(Icons.restaurant_menu),
-        backgroundColor: Colors.yellow[700],
+        backgroundColor: Colors.yellow[800],
       ),
     );
   }
