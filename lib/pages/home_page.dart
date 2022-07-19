@@ -63,14 +63,14 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            // ListTile(
-            //   leading: Icon(Icons.sell),
-            //   title: Text('Cupons'),
-            //   onTap: () {
-            //     Navigator.of(context).pushNamed('/coupon');
-            //   },
-            // ),
-            SizedBox(height: 470),
+            ListTile(
+              leading: Icon(Icons.people),
+              title: Text('Sobre nós'),
+              onTap: () {
+                Navigator.of(context).pushNamed('/about');
+              },
+            ),
+            SizedBox(height: 410),
             ListTile(
               // contentPadding: ,
               leading: Icon(Icons.logout),
