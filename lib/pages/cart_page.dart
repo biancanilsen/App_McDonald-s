@@ -90,7 +90,7 @@ class _RegisterPageState extends State<CartPage> {
                             if (_items[index]['qtd'] <= 1) {
                               var buy = 0;
                               var qtd = 0;
-                              _deleteCartItem(_items[index]['id'], qtd);
+                             await _deleteCartItem(_items[index]['id'], qtd);
                             }
                           },
                           child: const Text('-'),
