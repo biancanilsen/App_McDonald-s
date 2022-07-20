@@ -133,24 +133,32 @@ class _RegisterPageState extends State<CartPage> {
                 ),
               ))),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => showDialog<String>(
-          context: context,
-          builder: (BuildContext context) => AlertDialog(
-            title: const Text('Pedido realizado com sucesso!'),
-            content: const Text('Receba em seu endereço.'),
-            actions: <Widget>[
-              OutlinedButton(
-                onPressed: () {
-                  for (var i = 0; i < _items.length; i++) {
-                    _deleteCartItem(_items[i]['id'], 0);
-                  }
-                  Navigator.of(context).pushNamed('/home');
-                },
-                child: const Text('Ok'),
+        onPressed: () async {
+          if (total > 0.0) {
+            showDialog<String>(
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                title: const Text('Pedido realizado com sucesso!'),
+                content: const Text('Receba em seu endereço.'),
+                actions: <Widget>[
+                  OutlinedButton(
+                    onPressed: () {
+                      for (var i = 0; i < _items.length; i++) {
+                        _deleteCartItem(_items[i]['id'], 0);
+                      }
+                      Navigator.of(context).pushNamed('/home');
+                    },
+                    child: const Text('Ok'),
+                  ),
+                ],
               ),
-            ],
-          ),
-        ),
+            );
+          } else {
+            onPressed:
+            null;
+          }
+          ;
+        },
         label: const Text('  Finalizar pedido e pagar na entrega     '),
         icon: const Icon(Icons.done),
         backgroundColor: Colors.green[700],
