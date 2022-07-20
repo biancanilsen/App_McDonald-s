@@ -164,8 +164,8 @@ class _HomePageState extends State<HomePage> {
                                 if (_items[index]['qtd'] == 1) {
                                   await _updateItem(_items[index]['id'], 1, buy,
                                       _items[index]['price']);
-                                    print('passou');
-                                } else if(_items[index]['qtd'] != 1){
+                                  print('passou');
+                                } else if (_items[index]['qtd'] != 1) {
                                   var value = _items[index]['qtd'].toInt();
                                   value++;
                                   var price = value * _items[index]['price'];
