@@ -204,8 +204,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> _addItem() async {
-    await SQLHelper.createItem('Sundae Caramelo', 11.50,
-        'assets/images/sundae-caramelo.png', 0, 0, 11.50);
+    await SQLHelper.createItem(
+        'Quarteirão', 14.50, 'assets/images/quarteirão.png', 0, 0, 14.50);
     _refreshItems();
   }
 }
