@@ -85,7 +85,8 @@ class _RegisterPageState extends State<CartPage> {
                             total = total - _items[index]['price'];
                             print(_items[index]['qtd']);
                             if (_items[index]['qtd'] <= 1) {
-                              _deleteCartItem(_items[index]['id'], 0);
+                              await _deleteCartItem(_items[index]['id'], 0);
+                              Navigator.of(context).pushNamed('/home');
                             } else {
                               await _updateItem(
                                   _items[index]['id'], value, 1, price);
@@ -176,7 +177,6 @@ class _RegisterPageState extends State<CartPage> {
   Future<void> _deleteCartItem(int id, int qtd) async {
     print('DELETADO');
     await SQLHelper.updateCartItems(id, qtd);
-
     _refresh();
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:primeiro_projeto/controllers/app_controller.dart';
 import 'package:primeiro_projeto/pages/login_page.dart';

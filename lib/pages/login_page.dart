@@ -58,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                     // crossAxisAlignment: CrossAxisAlignment.stretch,
                     color: (Colors.yellow[600]),
                     onPressed: () {
-                      if (email == 'danilo@hotmail.com' && senha == '123') {
+                      if (email == 'teste@teste.com' && senha == '123') {
                         Navigator.of(context).pushNamed('/home');
                         print('Login realizado com sucesso');
                       } else {

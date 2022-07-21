@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import '../database/sql_helper.dart';
+import 'package:carousel_slider/carousel_state.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -161,11 +162,11 @@ class _HomePageState extends State<HomePage> {
                               onPressed: () async {
                                 var buy = 1;
 
-                                if (_items[index]['qtd'] == 1) {
+                                if (_items[index]['buy'] == 0) {
                                   await _updateItem(_items[index]['id'], 1, buy,
                                       _items[index]['price']);
                                   print('passou');
-                                } else if (_items[index]['qtd'] != 1) {
+                                } else if (_items[index]['qtd'] != 0) {
                                   var value = _items[index]['qtd'].toInt();
                                   value++;
                                   var price = value * _items[index]['price'];
@@ -192,7 +193,6 @@ class _HomePageState extends State<HomePage> {
   Future<void> _updateItem(int id, int qtd, int buy, double totalPrice) async {
     print('TESTE');
     await SQLHelper.updateItem(id, qtd, buy, totalPrice);
-
     _refreshItems();
   }
 
@@ -205,7 +205,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _addItem() async {
     await SQLHelper.createItem(
-        'Quarteirão', 14.50, 'assets/images/quarteirão.png', 0, 0, 14.50);
+        'Nuggets', 5.90, 'assets/images/nuggets.png', 0, 0, 5.90);
     _refreshItems();
   }
 }
