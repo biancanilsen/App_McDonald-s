@@ -140,7 +140,7 @@ class _RegisterPageState extends State<CartPage> {
               context: context,
               builder: (BuildContext context) => AlertDialog(
                 title: const Text('Pedido realizado com sucesso!'),
-                content: const Text('Receba em seu endereço.'),
+                content: const Text('Receba e pague em seu endereço.'),
                 actions: <Widget>[
                   OutlinedButton(
                     onPressed: () {
