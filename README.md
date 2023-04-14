@@ -1,16 +1,25 @@
-# POC app Mc Donalds em FLutter
 
-A new Flutter project.
+# App_McDonald-s🍟
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application.
+View made with FLutter,the components used are from Flutter Material. The objective of the application is to be a delivery application for Mc Donalds
 
-A few resources to get you started if this is your first Flutter project:
+### Features:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- The user can add items to his/her shopping cart;
+- The user can edit the quantity of each item in his/her cart;  
+- The user can delete items from his cart;  
+- The user can finalize the order;     
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Used Technologies
+
+Front-end:
+
+> Developed using: Flutter, Material.
+
+
+## Installing Dependencies
+
+```flutter pub get
