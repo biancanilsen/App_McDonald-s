@@ -22,6 +22,4 @@ Front-end:
 
 ## Installing Dependencies
 
-```flutter pub get
-
-##
+> flutter pub get
